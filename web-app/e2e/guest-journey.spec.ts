@@ -8,16 +8,15 @@ test.describe('Guest User Journey', () => {
   test('should display home page with news and fixtures', async ({ page }) => {
     await expect(page).toHaveTitle(/Amafor Gladiators Digital Ecosystem/);
     await expect(page.getByRole('heading', { name: 'Welcome to the Club' })).toBeVisible();
-    // Be more specific to avoid ambiguity or use exact: true
     await expect(page.getByRole('heading', { name: 'Latest News' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Upcoming Fixtures' })).toBeVisible();
   });
 
   test('should navigate to players page and filter', async ({ page }) => {
-    // Ensure we wait for navigation
     await page.click('text=Players');
-    await page.waitForURL('/players');
+    await page.waitForURL('**/players');
 
+    // Check for the H1 specifically in the main content area if possible, or just exact match
     await expect(page.getByRole('heading', { name: 'First Team Squad' })).toBeVisible();
 
     // Test Search Filter (Client-side)
@@ -38,7 +37,6 @@ test.describe('Guest User Journey', () => {
     await expect(page.getByText('John Doe')).toBeVisible();
 
     await page.click('text=John Doe');
-    // Regex allows matching even if query params or trailing slash differs slightly
     await expect(page).toHaveURL(/\/players\/1/);
   });
 });

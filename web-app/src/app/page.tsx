@@ -6,6 +6,7 @@ import { ContentService, ContentItem } from '@/shared/api/services/content.servi
 import { LeagueService, Fixture } from '@/shared/api/services/league.service';
 import { NewsCard } from '@/widgets/news-card';
 import { FixtureCard } from '@/widgets/fixture-card';
+import { AdBanner } from '@/widgets/ad-banner';
 
 export default function Home() {
   const [latestNews, setLatestNews] = useState<ContentItem[]>([]);
@@ -37,6 +38,8 @@ export default function Home() {
         The official digital ecosystem for Amafor Gladiators Football Club.
         Follow matches, check player stats, and stay updated with the latest news.
       </p>
+
+      <AdBanner slotId="home-top-banner" className="w-full max-w-4xl mb-12" />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
         {/* Latest News Section */}

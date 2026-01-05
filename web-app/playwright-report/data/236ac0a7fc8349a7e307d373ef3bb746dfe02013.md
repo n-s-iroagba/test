@@ -17,11 +17,15 @@
           - /url: /players
         - link "News" [ref=e13] [cursor=pointer]:
           - /url: /news
-        - link "Sign In" [ref=e14] [cursor=pointer]:
+        - button "Notifications 3" [ref=e15]:
+          - generic [ref=e16]: Notifications
+          - img
+          - generic [ref=e18]: "3"
+        - link "Sign In" [ref=e19] [cursor=pointer]:
           - /url: /login
-  - main [ref=e15]:
-    - generic [ref=e16]: Error loading players. Please try again later.
-  - contentinfo [ref=e17]:
-    - paragraph [ref=e19]: © 2026 Amafor Gladiators FC. All rights reserved.
-  - alert [ref=e20]
+  - main [ref=e20]:
+    - generic [ref=e21]: Error loading players. Please try again later.
+  - contentinfo [ref=e22]:
+    - paragraph [ref=e24]: © 2026 Amafor Gladiators FC. All rights reserved.
+  - alert [ref=e25]
 ```

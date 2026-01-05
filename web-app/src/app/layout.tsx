@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GlobalSearch } from "@/widgets/global-search";
+import { NotificationBell } from "@/widgets/notification-bell";
+import { AnalyticsTracker } from "@/widgets/analytics-tracker";
+import { Suspense } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,6 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased bg-neutral-50 text-neutral-900 min-h-screen">
+        <Suspense fallback={null}>
+          <AnalyticsTracker />
+        </Suspense>
         <header className="bg-primary-900 text-white p-4 shadow-md">
           <div className="container mx-auto flex justify-between items-center">
             <div className="flex items-center">
@@ -26,6 +32,7 @@ export default function RootLayout({
               <Link href="/" className="hover:text-primary-300">Home</Link>
               <Link href="/players" className="hover:text-primary-300">Players</Link>
               <Link href="/news" className="hover:text-primary-300">News</Link>
+              <NotificationBell />
               <Link href="/login" className="bg-primary-700 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors ml-4">
                 Sign In
               </Link>

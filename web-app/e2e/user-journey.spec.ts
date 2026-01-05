@@ -58,8 +58,13 @@ test.describe('User Journey', () => {
     // Submit
     await page.click('button[type="submit"]');
 
-    // Wait for URL change to Home
+    // Wait for network idle or just use expect URL which retries
+    // Using waitForURL can be strict about load event which might be tricky in SPA.
+    // Just asserting URL is usually enough as it retries.
     await expect(page).toHaveURL('/');
+
+    // Check for "Welcome to the Club" to ensure we are on Home
+    await expect(page.getByRole('heading', { name: 'Welcome to the Club' })).toBeVisible();
 
     // Navigate to profile
     await page.goto('/profile');
