@@ -8,17 +8,34 @@
 
 ✓ Starting...
 ✓ Ready in 2.8s
- GET / 200 in 2.6s (compile: 2.2s, render: 445ms)
- GET /players 200 in 1787ms (compile: 1714ms, render: 73ms)
- GET / 200 in 92ms (compile: 6ms, render: 86ms)
- GET /players 200 in 31ms (compile: 4ms, render: 27ms)
- GET / 200 in 84ms (compile: 4ms, render: 80ms)
- GET /players 200 in 39ms (compile: 4ms, render: 35ms)
- GET /leagues 200 in 1038ms (compile: 909ms, render: 129ms)
- GET /login 200 in 650ms (compile: 616ms, render: 34ms)
- GET / 200 in 394ms (compile: 30ms, render: 363ms)
- GET /players 200 in 97ms (compile: 49ms, render: 48ms)
- GET /leagues 200 in 40ms (compile: 5ms, render: 35ms)
- GET /login 200 in 30ms (compile: 5ms, render: 25ms)
-✓ Compiled in 177ms
+ GET /news 200 in 4.2s (compile: 3.4s, render: 818ms)
+⨯ ./src/features/user/edit-profile/ui/ProfileForm/ProfileForm.tsx:5:1
+Module not found: Can't resolve '../model/use-profile'
+[0m [90m 3 |[39m [36mimport[39m [33mReact[39m[33m,[39m { useState[33m,[39m useEffect } [36mfrom[39m [32m'react'[39m[33m;[39m
+ [90m 4 |[39m [36mimport[39m { [33mButton[39m } [36mfrom[39m [32m'@/shared/ui/Button'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 5 |[39m [36mimport[39m { useProfile } [36mfrom[39m [32m'../model/use-profile'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 6 |[39m
+ [90m 7 |[39m [36mexport[39m [36mconst[39m [33mProfileForm[39m [33m=[39m () [33m=>[39m {
+ [90m 8 |[39m   [36mconst[39m { user[33m,[39m isLoading[33m,[39m isSaving[33m,[39m error[33m,[39m successMessage[33m,[39m updateProfile } [33m=[39m useProfile()[33m;[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./src/features/user/edit-profile/ui/ProfileForm/ProfileForm.tsx
+    ./src/views/profile/ui/ProfilePage/ProfilePage.tsx
+    ./src/app/profile/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ GET /profile 500 in 2.8s (compile: 2.5s, render: 287ms)
+✓ Compiled in 952ms
+ GET /news 200 in 204ms (compile: 15ms, render: 189ms)
+ GET /profile 200 in 635ms (compile: 301ms, render: 334ms)
+ GET /news 200 in 141ms (compile: 10ms, render: 131ms)
+ GET /profile 200 in 98ms (compile: 6ms, render: 92ms)
+ GET /news 200 in 113ms (compile: 5ms, render: 108ms)
+ GET /profile 200 in 72ms (compile: 4ms, render: 68ms)
 [?25h
