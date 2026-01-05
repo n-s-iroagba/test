@@ -1,5 +1,11 @@
 import { HomePage } from '@/views/home';
+import { Navbar } from '@/widgets/navigation';
 
 export default function Page() {
-  return <HomePage />;
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      <HomePage />
+    </div>
+  );
 }

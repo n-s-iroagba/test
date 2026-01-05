@@ -7,7 +7,18 @@
 - Network:       http://192.168.0.2:3000
 
 ✓ Starting...
-✓ Ready in 1096ms
-○ Compiling / ...
- GET / 200 in 4.9s (compile: 4.6s, render: 326ms)
+✓ Ready in 2.8s
+ GET / 200 in 2.6s (compile: 2.2s, render: 445ms)
+ GET /players 200 in 1787ms (compile: 1714ms, render: 73ms)
+ GET / 200 in 92ms (compile: 6ms, render: 86ms)
+ GET /players 200 in 31ms (compile: 4ms, render: 27ms)
+ GET / 200 in 84ms (compile: 4ms, render: 80ms)
+ GET /players 200 in 39ms (compile: 4ms, render: 35ms)
+ GET /leagues 200 in 1038ms (compile: 909ms, render: 129ms)
+ GET /login 200 in 650ms (compile: 616ms, render: 34ms)
+ GET / 200 in 394ms (compile: 30ms, render: 363ms)
+ GET /players 200 in 97ms (compile: 49ms, render: 48ms)
+ GET /leagues 200 in 40ms (compile: 5ms, render: 35ms)
+ GET /login 200 in 30ms (compile: 5ms, render: 25ms)
+✓ Compiled in 177ms
 [?25h
