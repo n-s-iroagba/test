@@ -14,6 +14,18 @@ export interface Fixture {
   leagueId?: string;
 }
 
+export interface Standing {
+  teamId: string;
+  teamName: string;
+  played: number;
+  won: number;
+  drawn: number;
+  lost: number;
+  points: number;
+  goalsFor: number;
+  goalsAgainst: number;
+}
+
 export const LeagueService = {
   getUpcomingFixtures: async (limit: number = 5) => {
     return apiClient.get<Fixture[]>('/fixtures/upcoming', {
@@ -27,5 +39,9 @@ export const LeagueService = {
 
   getAllFixtures: async () => {
     return apiClient.get<Fixture[]>('/fixtures');
+  },
+
+  getStandings: async (leagueId?: string) => {
+    return apiClient.get<Standing[]>('/standings/current', { params: { leagueId } });
   }
 };

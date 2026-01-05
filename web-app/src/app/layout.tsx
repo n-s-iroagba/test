@@ -35,6 +35,7 @@ export default function RootLayout({
               <nav className="space-x-4 flex items-center ml-4">
                 <Link href="/" className="hover:text-primary-300">Home</Link>
                 <Link href="/players" className="hover:text-primary-300">Players</Link>
+                <Link href="/standings" className="hover:text-primary-300">Standings</Link>
                 <Link href="/news" className="hover:text-primary-300">News</Link>
                 <NotificationBell />
                 <ThemeToggle />
