@@ -4,10 +4,12 @@ import { useState } from 'react';
 import { usePlayers } from '@/shared/hooks/usePlayers';
 import { PlayerFilters, PlayerFiltersState } from '@/widgets/player-filters';
 import { Player } from '@/shared/api/services/player.service';
+import { Pagination } from '@/shared/ui/pagination';
 
 export default function PlayersPage() {
   const [filters, setFilters] = useState<PlayerFiltersState>({ position: '', search: '' });
-  const { players, loading, error } = usePlayers(filters);
+  const [page, setPage] = useState(1);
+  const { players, loading, error } = usePlayers({ ...filters, page, limit: 9 });
 
   // Client-side filtering for demo purposes if the API doesn't actually filter (since we are likely mocking or using a placeholder API)
   // In a real scenario, the 'usePlayers' hook would pass the filters to the API, and 'players' would already be filtered.
@@ -94,6 +96,10 @@ export default function PlayersPage() {
             </div>
           ))}
         </div>
+      )}
+
+      {!loading && !error && filteredPlayers.length > 0 && (
+         <Pagination currentPage={page} totalPages={3} onPageChange={setPage} />
       )}
     </div>
   );

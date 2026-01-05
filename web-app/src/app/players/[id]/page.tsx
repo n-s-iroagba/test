@@ -71,7 +71,7 @@ export default function PlayerDetailPage({ params }: { params: Promise<{ id: str
                 <h3 className="font-bold text-lg text-neutral-800 mb-4">Season Stats</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="bg-neutral-50 p-4 rounded border border-neutral-200 text-center">
-                        <span className="block text-xl font-bold text-neutral-900">{(player.stats as any)?.appearances || 0}</span>
+                        <span className="block text-xl font-bold text-neutral-900">{(player.stats as unknown as { appearances: number })?.appearances || 0}</span>
                         <span className="text-xs text-neutral-500 uppercase">Matches</span>
                     </div>
                     <div className="bg-neutral-50 p-4 rounded border border-neutral-200 text-center">

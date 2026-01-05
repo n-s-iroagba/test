@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { UserService, UpdateUserParams } from '@/shared/api/services/user.service';
 import { User } from '@/shared/api/services/auth.service';
 import { useToast } from '@/shared/lib/providers/toast-provider';
+import { AvatarUpload } from '@/widgets/avatar-upload';
 
 export const EditProfileForm: React.FC = () => {
   const { showToast } = useToast();
@@ -13,6 +14,7 @@ export const EditProfileForm: React.FC = () => {
     firstName: '',
     lastName: '',
     email: '',
+    avatarUrl: '',
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -26,6 +28,8 @@ export const EditProfileForm: React.FC = () => {
             firstName: response.data.firstName || '',
             lastName: response.data.lastName || '',
             email: response.data.email || '',
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            avatarUrl: (response.data as any).avatarUrl || '',
         });
       } catch (err) {
         console.error("Failed to load profile", err);
@@ -63,6 +67,13 @@ export const EditProfileForm: React.FC = () => {
   return (
     <div className="bg-white rounded-lg shadow-card border border-neutral-200 p-6 max-w-2xl mx-auto">
       <h2 className="text-2xl font-bold text-primary-900 mb-6">Edit Profile</h2>
+
+      <div className="mb-8">
+        <AvatarUpload
+          currentUrl={formData.avatarUrl}
+          onUploadComplete={(url) => setFormData(prev => ({ ...prev, avatarUrl: url }))}
+        />
+      </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

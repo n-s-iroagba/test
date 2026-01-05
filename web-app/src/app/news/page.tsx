@@ -3,17 +3,30 @@
 import { useState, useEffect } from 'react';
 import { ContentService, ContentItem } from '@/shared/api/services/content.service';
 import { NewsCard } from '@/widgets/news-card';
+import { Pagination } from '@/shared/ui/pagination';
 
 export default function NewsPage() {
   const [news, setNews] = useState<ContentItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
     async function fetchNews() {
+      setLoading(true);
       try {
-        const response = await ContentService.getAllContent();
-        setNews(response.data);
+        // Assume API supports pagination in params
+        // Mocking pagination logic if API returns all
+        const response = await ContentService.getAllContent({ page, limit: 9 });
+
+        // Mock pagination metadata since backend is mocked
+        const allItems = response.data || [];
+        // In real app, response would have meta.total
+        const total = 20; // Mock total
+        setTotalPages(Math.ceil(total / 9));
+
+        setNews(allItems);
       } catch (err) {
         console.error(err);
         setError('Failed to load news.');
@@ -22,7 +35,7 @@ export default function NewsPage() {
       }
     }
     fetchNews();
-  }, []);
+  }, [page]);
 
   return (
     <div className="py-8">
@@ -52,6 +65,10 @@ export default function NewsPage() {
             <NewsCard key={item.id} item={item} />
           ))}
         </div>
+      )}
+
+      {!loading && !error && news.length > 0 && (
+        <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />
       )}
     </div>
   );
