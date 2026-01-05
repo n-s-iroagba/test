@@ -3,34 +3,34 @@
 import React, { useState } from 'react';
 import { AuthService } from '@/shared/api/services/auth.service';
 import { useRouter } from 'next/navigation';
+import { useToast } from '@/shared/lib/providers/toast-provider';
 
 export const LoginForm: React.FC = () => {
   const router = useRouter();
+  const { showToast } = useToast();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
 
     try {
       const response = await AuthService.login({ email, password });
       if (response.data.token) {
-        // Simple token storage (in a real app, use a more secure method or httpOnly cookies via backend)
         if (typeof window !== 'undefined') {
             localStorage.setItem('authToken', response.data.token);
         }
+        showToast('Login successful! Redirecting...', 'success');
         router.push('/');
       }
     } catch (err: unknown) {
       console.error(err);
       if (err instanceof Error) {
-        setError(err.message);
+        showToast(err.message, 'error');
       } else {
-        setError('Login failed. Please check your credentials.');
+        showToast('Login failed. Please check your credentials.', 'error');
       }
     } finally {
       setLoading(false);
@@ -40,12 +40,6 @@ export const LoginForm: React.FC = () => {
   return (
     <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-card border border-neutral-200">
       <h2 className="text-2xl font-bold text-center text-primary-900 mb-6">Sign In</h2>
-
-      {error && (
-        <div className="mb-4 p-3 bg-error-50 text-error-600 rounded text-sm">
-          {error}
-        </div>
-      )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>

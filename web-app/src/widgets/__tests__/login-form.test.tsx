@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { LoginForm } from '../login-form';
+import { ToastProvider } from '@/shared/lib/providers/toast-provider';
 import '@testing-library/jest-dom';
 
 // Mock AuthService
@@ -18,7 +19,11 @@ jest.mock('next/navigation', () => ({
 
 describe('LoginForm', () => {
   it('renders login form', () => {
-    render(<LoginForm />);
+    render(
+      <ToastProvider>
+        <LoginForm />
+      </ToastProvider>
+    );
 
     expect(screen.getByRole('heading', { level: 2, name: /Sign In/i })).toBeInTheDocument();
     expect(screen.getByLabelText(/Email Address/i)).toBeInTheDocument();

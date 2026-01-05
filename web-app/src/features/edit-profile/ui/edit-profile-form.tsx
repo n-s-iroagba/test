@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { UserService, UpdateUserParams } from '@/shared/api/services/user.service';
 import { User } from '@/shared/api/services/auth.service';
+import { useToast } from '@/shared/lib/providers/toast-provider';
 
 export const EditProfileForm: React.FC = () => {
+  const { showToast } = useToast();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [user, setUser] = useState<User | null>(null);
   const [formData, setFormData] = useState<UpdateUserParams>({
@@ -14,7 +16,6 @@ export const EditProfileForm: React.FC = () => {
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
 
   useEffect(() => {
     async function fetchProfile() {
@@ -28,13 +29,13 @@ export const EditProfileForm: React.FC = () => {
         });
       } catch (err) {
         console.error("Failed to load profile", err);
-        // Fallback for demo if API fails (since we don't have a real backend)
-        // In a real app, handle error properly
+        showToast('Failed to load profile data.', 'error');
       } finally {
         setLoading(false);
       }
     }
     fetchProfile();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,14 +46,13 @@ export const EditProfileForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
-    setMessage(null);
 
     try {
       await UserService.updateProfile(formData);
-      setMessage({ type: 'success', text: 'Profile updated successfully!' });
+      showToast('Profile updated successfully!', 'success');
     } catch (err) {
       console.error(err);
-      setMessage({ type: 'error', text: 'Failed to update profile.' });
+      showToast('Failed to update profile.', 'error');
     } finally {
       setSaving(false);
     }
@@ -63,12 +63,6 @@ export const EditProfileForm: React.FC = () => {
   return (
     <div className="bg-white rounded-lg shadow-card border border-neutral-200 p-6 max-w-2xl mx-auto">
       <h2 className="text-2xl font-bold text-primary-900 mb-6">Edit Profile</h2>
-
-      {message && (
-        <div className={`mb-4 p-3 rounded text-sm ${message.type === 'success' ? 'bg-success-50 text-success-600' : 'bg-error-50 text-error-600'}`}>
-          {message.text}
-        </div>
-      )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
