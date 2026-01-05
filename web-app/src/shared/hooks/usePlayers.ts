@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { PlayerService, Player } from '../api/services/player.service';
+import { PlayerService, Player, PlayerQueryParams } from '../api/services/player.service';
 
-export function usePlayers(params?: unknown) {
+export function usePlayers(params?: PlayerQueryParams) {
   const [players, setPlayers] = useState<Player[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<unknown>(null);

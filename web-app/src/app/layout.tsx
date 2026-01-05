@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GlobalSearch } from "@/widgets/global-search";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,8 +18,11 @@ export default function RootLayout({
       <body className="antialiased bg-neutral-50 text-neutral-900 min-h-screen">
         <header className="bg-primary-900 text-white p-4 shadow-md">
           <div className="container mx-auto flex justify-between items-center">
-            <h1 className="text-xl font-bold font-serif">Amafor Gladiators</h1>
-            <nav className="space-x-4 flex items-center">
+            <div className="flex items-center">
+              <h1 className="text-xl font-bold font-serif mr-8">Amafor Gladiators</h1>
+              <GlobalSearch />
+            </div>
+            <nav className="space-x-4 flex items-center ml-4">
               <Link href="/" className="hover:text-primary-300">Home</Link>
               <Link href="/players" className="hover:text-primary-300">Players</Link>
               <Link href="/news" className="hover:text-primary-300">News</Link>
