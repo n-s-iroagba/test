@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('User Journey', () => {
   test('should allow user to login and access profile', async ({ page }) => {
     // 1. Intercept the Login Request
-    await page.route('**/api/auth/login', async route => {
+    await page.route('**/auth/login', async route => {
       // Mock successful login response
       await route.fulfill({
         status: 200,
@@ -21,7 +21,7 @@ test.describe('User Journey', () => {
     });
 
     // 2. Intercept Profile GET Request
-    await page.route('**/api/users/profile', async route => {
+    await page.route('**/users/profile', async route => {
         if (route.request().method() === 'GET') {
             await route.fulfill({
                 status: 200,
@@ -47,6 +47,17 @@ test.describe('User Journey', () => {
         }
     });
 
+    // Also Mock Home content so it loads after login redirect
+    await page.route('**/content/latest*', async route => {
+        await route.fulfill({ status: 200, body: JSON.stringify([]) });
+    });
+    await page.route('**/fixtures/upcoming*', async route => {
+        await route.fulfill({ status: 200, body: JSON.stringify([]) });
+    });
+    await page.route('**/ad-delivery/select*', async route => {
+        await route.fulfill({ status: 200, body: JSON.stringify({}) });
+    });
+
     // Navigate to login
     await page.goto('/login');
     await expect(page.getByRole('heading', { name: 'Sign In' })).toBeVisible();
@@ -58,10 +69,8 @@ test.describe('User Journey', () => {
     // Submit
     await page.click('button[type="submit"]');
 
-    // Wait for network idle or just use expect URL which retries
-    // Using waitForURL can be strict about load event which might be tricky in SPA.
-    // Just asserting URL is usually enough as it retries.
-    await expect(page).toHaveURL('/');
+    // Wait for URL change to Home
+    await expect(page).toHaveURL('http://localhost:3000/');
 
     // Check for "Welcome to the Club" to ensure we are on Home
     await expect(page.getByRole('heading', { name: 'Welcome to the Club' })).toBeVisible();
@@ -70,7 +79,10 @@ test.describe('User Journey', () => {
     await page.goto('/profile');
 
     await expect(page.getByRole('heading', { name: 'Edit Profile' })).toBeVisible();
-    await expect(page.getByDisplayValue('Test')).toBeVisible();
+
+    // Check form values - use inputs value or locator with value
+    await expect(page.locator('input[name="firstName"]')).toHaveValue('Test');
+    await expect(page.locator('input[name="lastName"]')).toHaveValue('User');
 
     // Test Update
     await page.fill('input[name="firstName"]', 'Updated');
