@@ -1,0 +1,514 @@
+﻿USER JOURNEYS
+*Derived from AGFC PRD v2.1 - All Personas, Epics, ACs, NFRs, and System Behaviors*
+________________
+
+
+PERSONA: MARCUS (THE INTERNATIONAL SCOUT)
+1. Discover & Register for Pro View Portal
+Goal: Gain exclusive access to verified player data and match archives.
+1. Navigates to website.
+2. Finds "Scout/Pro View Access" CTA.
+3. Clicks to access registration form.
+4. Fills form (Name, Email, Social URL, Organization, Reason).
+5. Submits application.
+6. Receives "pending manual review" confirmation.
+7. (System) Notifies admin of new application.
+8. Receives email notification of approval/rejection.
+9. If approved, logs into secure Pro View portal.
+2. Evaluate Player via Verified Profiles
+Goal: Assess player potential using reliable, audited data.
+1. Logs into Pro View portal.
+2. Browses/searches for a player.
+3. Clicks to view detailed profile (Name, Image, DOB, Height, Position, Bio).
+4. (Optional) Views audit trail for profile edit history.
+5. (Optional) Uses "Recently Viewed" list to revisit profiles.
+3. Analyze Performance via Match Archives
+Goal: Watch full matches to scout performance.
+1. Logs into Pro View portal.
+2. Navigates to "Match Archives."
+3. Selects a fixture.
+4. Accesses embedded full-match video (YouTube/Vimeo).
+5. Video loads with adaptive bitrate for smooth playback.
+4. Export Player Data for External Analysis
+Goal: Get player list for offline review.
+1. Logs into Pro View portal.
+2. Navigates to player list/search.
+3. Applies filters (e.g., Position, Age).
+4. Clicks "Export to CSV."
+5. Downloads CSV (Name, Position, Age).
+5. Attempt Early Access to Match Archives
+Goal: Access archives before processing is complete.
+1. Logs in shortly after match ends.
+2. Navigates to new match in archives.
+3. Finds archives unavailable if <30 minutes post-match.
+4. Returns later to find them available.
+6. Experience Content Segregation
+Goal: Confirm exclusive access to Pro View content.
+1. Logs into Pro View portal.
+2. Browses available content.
+3. Verifies they cannot see draft or admin-only content areas.
+________________
+
+
+PERSONA: CHIDI (THE LOCAL/DIASPORA FAN) & NGOZI (THE PATRON)
+1. Catch Up on Club News & Videos
+Goal: Read articles and watch highlights.
+1. Visits website homepage.
+2. Browses "News" / "Highlights."
+3. Clicks on article.
+4. Reads article with embedded videos/images.
+5. Video starts within 5 seconds on 3G (adaptive bitrate).
+6. (Optional) Uses global search to find specific content.
+2. Check League Standings & Results
+Goal: See team position, fixtures, results.
+1. Visits website.
+2. Navigates to "League" / "Fixtures."
+3. Views dynamically updated league table (horizontal scroll on mobile).
+4. Scrolls through fixtures/results (updated within 30 mins of match end).
+3. Share Content on WhatsApp
+Goal: Share article/video with friends.
+1. Views an article/video page.
+2. Clicks WhatsApp share button.
+3. WhatsApp opens with pre-filled message + URL + thumbnail.
+4. Selects contact/group and sends.
+4. View Match Lineups
+Goal: See starting players for a match.
+1. Navigates to specific fixture page.
+2. Views "Lineups" section with starting players.
+5. Browse Academy Structure
+Goal: Understand youth development philosophy.
+1. Navigates to "Academy" in main menu.
+2. Clicks sub-pages: Philosophy, Curriculum, Staff, Player Pathway.
+6. Make a One-Time Donation
+Goal: Financially support club and get receipt.
+1. Navigates to "Support Us" / "Donate."
+2. Enters donation amount.
+3. (Optional) Opts-in to Supporter Wall.
+4. Clicks "Donate with Paystack."
+5. Redirected to secure Paystack checkout.
+6. Completes payment.
+7. Receives automated email receipt (Amount, Date, Transaction ID, Ref).
+7. Contact Academy via WhatsApp Widget
+Goal: Quickly ask a question as a parent/prospect.
+1. Sees floating WhatsApp widget on site (especially Academy pages).
+2. Clicks widget.
+3. WhatsApp opens with pre-defined greeting to club's number.
+4. Sends inquiry.
+8. Become a Recognized Patron
+Goal: Set up recurring support and be publicly recognized.
+1. Navigates to "Become a Patron" page.
+2. Reviews tiers (Sponsor/Grand Patron, Patron, Supporter, Advocate, Legend).
+3. Selects a tier (monthly/yearly/lifetime).
+4. Clicks "Subscribe" / "Become a Patron."
+5. Goes through Paystack subscription setup.
+6. Receives confirmation email and receipt.
+7. Sees name/portrait/logo on homepage patron section and patron page.
+9. Use Global Search
+Goal: Find specific players, articles, match reports.
+1. Uses global search bar in header.
+2. Types query (e.g., player name, "match report").
+3. Views results in tabs: Players, Articles, Match Reports.
+4. Sees key info per result (position, date, score).
+5. If no results, sees helpful "no results" message.
+10. Interact with Cookie Consent
+Goal: Control privacy settings for tracking.
+1. On first visit, sees cookie consent banner.
+2. Clicks "Accept" to enable GA & ad tracking.
+3. OR, clicks "Reject" to disable tracking; site remains functional.
+11. View the Supporter Wall
+Goal: See donor recognition after donating.
+1. Navigates to "Supporter Wall" page.
+2. Views list of donor names sorted alphabetically by last name.
+3. Notes names with non-A-Z characters at bottom, sorted by date.
+12. Experience Mobile-Optimized Site (320px)
+Goal: Use site on very small mobile screen.
+1. Accesses site on 320px wide device.
+2. Navigates, confirming all components are usable.
+3. Specifically scrolls league table horizontally.
+13. Encounter Empty States
+Goal: Understand what to do when no content exists.
+1. Performs a search with no matches.
+2. (Or) Views an advertiser dashboard with no campaigns.
+3. Sees illustrative graphic + helpful text explaining the empty state.
+14. Encounter Loading States
+Goal: Receive feedback during slow operations.
+1. Triggers a PDF generation.
+2. (Or) Waits for video to buffer.
+3. (Or) Creates a new ad campaign.
+4. Sees a loading spinner or skeleton screen.
+15. Experience Fast Search Performance
+Goal: Get quick search results.
+1. Uses global search on a site with 10,000+ records.
+2. Receives search results in under 2 seconds.
+16. Navigate via Keyboard & Screen Reader
+Goal: Use site with accessibility tools.
+1. Navigates entire site using only keyboard (Tab, Enter).
+2. Sees visible focus states on interactive elements.
+3. Uses screen reader; hears appropriate alt text for all images.
+17. Manage Notification Preferences
+Goal: Control email subscription settings.
+1. Receives a system notification email.
+2. Clicks "unsubscribe" link at bottom.
+3. Is directed to a page to manage preferences.
+________________
+
+
+PERSONA: FATIMA (THE LOCAL BUSINESS OWNER / ADVERTISER)
+1. Register as a Verified Advertiser
+Goal: Create an account to start advertising.
+1. Clicks "Advertise" CTA on website.
+2. Fills registration form (Business Name, Email, Phone).
+3. Submits form; account status becomes "Pending Verification."
+4. Receives approval email from Commercial Manager.
+5. Logs into advertiser dashboard.
+2. Create & Launch an Ad Campaign
+Goal: Set up targeted ad campaign and pay.
+1. Logs into advertiser dashboard.
+2. Clicks "Create New Campaign."
+3. Selects ad zone (sees exact specs/price).
+4. Uploads creative; system validates dimensions/format/size.
+5. Creative auto-tagged with "Ad by [Advertiser], [Company]".
+6. Sets targeting (Home Page OR specific content tags).
+7. Defines target unique views.
+8. System calculates total cost (per-view rate × target).
+9. Proceeds to Paystack checkout; completes payment.
+10. Receives payment confirmation email.
+11. Campaign becomes "Active."
+3. Monitor Campaign Performance
+Goal: Check real-time ad delivery metrics.
+1. Logs into advertiser dashboard.
+2. Views campaign list/performance dashboard.
+3. Sees metrics: Purchased, Delivered, Remaining views, CPV.
+4. Data updates with ≤5 minute latency.
+4. Respond to Campaign Completion
+Goal: Be notified when campaign finishes.
+1. Receives email: campaign reached 100% delivery, auto-paused.
+2. Email includes upsell option for new campaign.
+3. Logs in to see paused campaign at 100% delivered.
+5. File a Delivery Dispute
+Goal: Report suspected ad delivery issue.
+1. Sends email to complaints@amaforgaladiatorsfc.com.
+2. Receives auto-acknowledgement with case number.
+3. Receives substantive response from Commercial Manager within 2 business days.
+6. Receive Ad Rate Change Notification
+Goal: Be informed of pricing changes.
+1. Receives email 30 days prior to per-view rate change.
+2. Email details new rates and effective date.
+7. Attempt to Advertise During Payment Outage
+Goal: Create campaign when Paystack is down.
+1. Tries to create campaign/reach payment.
+2. Sees system maintenance message.
+3. Is prevented from completing purchase.
+8. View & Export Historical Performance Data
+Goal: Analyze past campaign data.
+1. Logs into dashboard.
+2. Navigates to historical reports (data retained for 1 year).
+3. (Optional) Exports campaign data (Campaign, Views, Spend) to CSV.
+9. Confirm Data Segregation
+Goal: Verify privacy of advertiser data.
+1. Logs into dashboard.
+2. Browses campaign/list views.
+3. Confirms they cannot see other advertisers' data/campaigns.
+10. Handle Upload Validation Failure
+Goal: Correct a failed creative upload.
+1. Attempts to upload invalid creative (wrong size/format).
+2. Receives clear error message stating the reason.
+3. Corrects the file and re-uploads successfully.
+11. Verify Ad Targeting
+Goal: Confirm ad appears on correct pages.
+1. Creates campaign targeting specific tags (e.g., "Football News").
+2. After approval, visits pages tagged "Football News."
+3. Confirms their ad appears on those pages.
+________________
+
+
+PERSONA: TUNDE (THE CLUB MEDIA MANAGER)
+1. Publish News Article with Embedded Video
+Goal: Create and publish fan content.
+1. Logs into admin CMS.
+2. Navigates to "Create New Article."
+3. Uses WYSIWYG editor (mobile-friendly).
+4. Embeds video by pasting YouTube/Vimeo URL (auto-embed).
+5. Applies predefined content tags.
+6. Publishes article; appears on public site.
+2. Monitor Content Performance (View Counts)
+Goal: See which content is most popular.
+1. Logs into internal admin dashboard.
+2. Navigates to "Analytics" / "Content Performance."
+3. Views list of articles/videos with internal view counts.
+3. Use Content Tagging System
+Goal: Categorize content for organization and ad targeting.
+1. While publishing article, accesses "Tags" section.
+2. Selects from predefined list (e.g., Football News, Match Report).
+3. Saves tags with article.
+4. Save Draft & Return to Edit
+Goal: Work on content incrementally.
+1. Starts a new article in CMS.
+2. Clicks "Save Draft."
+3. Logs out/later returns to CMS.
+4. Navigates to "Drafts," opens article, continues editing.
+5. Schedule Article for Future Publication
+Goal: Time content release.
+1. In CMS, writes article.
+2. Sets a future date/time in "Publish Schedule" field.
+3. Saves. Article auto-publishes at scheduled time.
+________________
+
+
+PERSONA: ADMIN USER (COMPOSITE: DATA STEWARD, SPORTS ADMIN, COMMERCIAL MANAGER, SUPER ADMIN)
+1. Manage User Roles & Access (Super Admin)
+Goal: Control system access permissions.
+1. Logs into admin panel.
+2. Navigates to user management.
+3. Assigns roles (Data Steward, Sports Admin, etc.) to users.
+4. System enforces RBAC based on assignments.
+2. Approve a Scout's Pro View Application
+Goal: Vet and grant scout access.
+1. Receives notification of new Pro View application.
+2. Logs into admin panel.
+3. Navigates to "Pro View Applications" queue.
+4. Reviews scout info.
+5. Approves/rejects application.
+6. System notifies scout of decision.
+3. Generate Branded Player PDF
+Goal: Create professional player summary for promotion.
+1. Logs into admin panel.
+2. Navigates to player profile.
+3. Clicks "Generate PDF Summary."
+4. Selects options (include contact info?, apply branding).
+5. Clicks generate; sees loading spinner.
+6. Downloads branded PDF with player data & timestamps.
+4. Update League Data (Sports Admin)
+Goal: Input latest match data.
+1. Logs into Sports Admin panel.
+2. Navigates to "Fixtures & Results" / "League Table."
+3. Manually enters new data (score, time).
+4. Saves. Public site updates within 30 minutes.
+5. Manage Match Lineups (Sports Admin)
+Goal: Set starting players for a fixture.
+1. Logs into admin panel.
+2. Navigates to upcoming fixture.
+3. Edits "Lineup" section, selecting from squad.
+4. Saves. Lineup displays on public fixture page.
+6. Correct Published Match Result Error
+Goal: Fix a mistake in published data.
+1. Notices error in a published result.
+2. Logs into Sports Admin panel.
+3. Edits the incorrect fixture data.
+4. Saves. Correction is live immediately.
+7. Verify an Advertiser Account (Commercial Manager)
+Goal: Manually approve business advertiser.
+1. Logs into admin panel.
+2. Navigates to "Advertiser Applications."
+3. Reviews business details.
+4. Marks account as "Verified."
+5. System notifies advertiser.
+8. Update Advertising Rates (Commercial Manager)
+Goal: Change pricing for ad zones.
+1. Logs into admin panel.
+2. Navigates to "Ad Rates Configuration."
+3. Updates per-view rate for zones (HP_TOP, SIDEBAR, etc.).
+4. Saves.
+5. System schedules emails to all advertisers 30 days prior to change.
+9. Review Security Audit Logs (IT/Security Lead)
+Goal: Investigate data changes for compliance.
+1. Logs into restricted security panel.
+2. Navigates to "Audit Logs."
+3. Filters by user, date, or table.
+4. Views immutable records (Old/New Value, User ID, Timestamp).
+10. Conduct Periodic Log Review
+Goal: Proactively detect unauthorized activity.
+1. Schedules regular (e.g., weekly) audit log review.
+2. Follows Journey 9 to analyze logs.
+3. Investigates any anomalies.
+11. Manually Add/Edit a Patron Record
+Goal: Manage patron info for recognition (e.g., offline sign-ups).
+1. Logs into admin panel.
+2. Navigates to "Patron Management."
+3. Adds new patron (Name, Tier, Portrait/Logo, Commitment).
+4. OR edits existing patron.
+5. Changes reflect on public homepage/patron page.
+12. Use Role-Based Dashboard
+Goal: Quickly access relevant tasks.
+1. Logs into admin dashboard.
+2. Sees personalized widgets & quick-actions for their role (e.g., "Update Lineup" for Sports Admin).
+13. Experience Admin Session Timeout
+Goal: Maintain security via session management.
+1. Logs into admin panel.
+2. Is inactive for 25 minutes.
+3. Sees warning modal to extend session.
+4. If no action, at 30 minutes logged out & redirected to login with message.
+14. Trigger System Notifications (Receive)
+Goal: Be informed of key platform activities.
+1. Receives email: new Pro View application submitted.
+2. Receives email: new patron signed up.
+3. (Commercial Manager) Receives email: new advertiser complaint filed.
+15. Respond to Advertiser Complaint
+Goal: Resolve disputes within SLA.
+1. Receives complaint email notification.
+2. Logs into system, reviews complaint details & campaign data.
+3. Formulates substantive response.
+4. Replies to advertiser within 2 business days.
+16. Review Ad Delivery Reconciliation Logs
+*Goal: Ensure 99.9% ad view/budget sync accuracy.*
+1. Logs into system/reporting tool.
+2. Pulls weekly reconciliation report comparing system counts vs. GA4 events.
+3. Investigates any discrepancies.
+17. Edit a Player Profile (Trigger Audit)
+Goal: Update player information.
+1. Logs in as Data Steward/Super Admin.
+2. Edits a field in a player profile (e.g., Height).
+3. Saves changes.
+4. (System) Logs the change in immutable audit trail.
+18. Access Audit Trail View
+Goal: Inspect change history for a record.
+1. Logs into admin panel.
+2. Navigates to a player profile (or other audited entity).
+3. Clicks "View Change History" or similar.
+4. Reviews list of all edits with details.
+19. Export Ad Performance Data
+Goal: Get campaign data for external analysis.
+1. Logs into admin dashboard.
+2. Navigates to advertising reports.
+3. Applies date/other filters.
+4. Clicks "Export to CSV."
+5. Downloads file with Campaign, Views, Spend data.
+20. Enforce 30-Minute Update SLA
+Goal: Ensure timely league data updates.
+1. (Sports Admin) Receives final match result.
+2. Logs in and updates data within 30 minutes.
+3. (System) Public site reflects update within the SLA window.
+21. Use Enhanced Navigation (Breadcrumbs)
+Goal: Navigate deep admin pages easily.
+1. Navigates to a page >2 levels deep (e.g., Admin > Users > Edit User).
+2. Sees breadcrumb trail (e.g., "Admin / User Management / Edit: John Doe").
+3. Clicks a breadcrumb to navigate back.
+22. Use Tooltips for Guidance
+Goal: Understand dashboard icons/controls.
+1. Logs into dashboard for first time.
+2. Hovers over a complex control (e.g., ad zone selector).
+3. Sees a tooltip explaining its function.
+23. Access Help & Contact Page
+Goal: Find support information.
+1. Navigates to "Help & Contact" page (via footer or user menu).
+2. Browses FAQs.
+3. Finds support email: support@amaforgladiatorsfc.com.
+24. Manage User Accounts (Password Reset)
+Goal: Assist user who forgot password.
+1. User requests password reset via "Forgot Password."
+2. (System) Sends reset link to user's email.
+3. (Admin) Can also manually reset password/unlock account in admin panel.
+25. Reconcile Financial Transactions
+Goal: Align internal records with Paystack.
+1. (Finance Admin) Logs into admin financial reports.
+2. Exports transaction list for period (donations, ads, patronage).
+3. Compares with Paystack merchant dashboard records.
+4. Investigates/resolves discrepancies.
+26. Handle Failed Subscription Payment
+Goal: Manage patron status when payment fails.
+1. (System) Receives Paystack webhook for failed payment.
+2. (System) Updates patron's status to "Payment Failed" or similar.
+3. (System) Sends notification email to patron and/or admin.
+27. Perform System Health Check
+Goal: Verify all integrations are operational.
+1. Logs into system health dashboard (if built).
+2. Views status of Paystack, GA4, Email Service integrations.
+3. Investigates any "Down" or "Error" statuses.
+28. Execute Go-Live Checklist
+Goal: Confirm readiness for launch.
+1. (Product Owner) Reviews Section 8.0 checklist.
+2. Confirms each item: UAT passed, performance tests OK, admins trained, etc.
+3. Signs off on launch.
+29. Train Other Admin Users
+Goal: Ensure team can use platform before launch.
+1. (Lead Admin) Conducts training session using staging environment.
+2. Walks through key journeys: publishing, updating fixtures, managing ads.
+3. Answers questions, provides documentation.
+________________
+
+
+SYSTEM-DRIVEN / AUTOMATED JOURNEYS
+1. Auto-Pause Ad Campaign at 100% Delivery
+1. Campaign runs, tracking unique views.
+2. Delivered views reach 100% of purchased target.
+3. (System) Automatically changes campaign status to "Paused."
+4. (System) Sends email notification to advertiser with upsell option.
+2. Auto-Acknowledge Complaint Email
+1. Email sent to complaints@amaforgaladiatorsfc.com.
+2. (System) Detects new email to this address.
+3. (System) Sends auto-reply with case number.
+4. (System) Logs complaint in tracking system.
+3. Hourly Sync of Ad Views from GA4
+1. Google Analytics records GA4 event for an ad view.
+2. (System) Hourly cron job queries GA4 for new events.
+3. (System) Processes events, updates internal ad delivery counters.
+4. Dashboard data reflects updates with ≤5 min latency from sync.
+4. Log Audit Trail on Data Change
+1. User with edit privileges changes a field in an audited table (e.g., Player Profile).
+2. (System) Intercepts the save operation.
+3. (System) Records Old Value, New Value, User ID, Timestamp to immutable log table.
+5. Insert Mid-Article Ad
+1. User views an article page.
+2. (System) Parses article content, counts ~100 words.
+3. (System) Inserts a Mid-Article ad zone (640x360 video) after the 100th word.
+4. If article <100 words, ad is inserted at the end.
+6. Track an "Ad View"
+1. User's browser loads a page with an active ad.
+2. Ad becomes 50% visible in viewport for ≥1 second.
+3. (System) Frontend script triggers a GA4 event for a "view."
+4. (System) Sets/checks a persistent cookie to count only once per user per 24h.
+5. Event is logged for hourly sync (Journey S.3).
+7. Enforce SSL/TLS Across Site
+1. User or system attempts HTTP access to any page/API.
+2. (System) Redirects request to HTTPS equivalent.
+3. All data transmission is encrypted.
+8. Perform Automated Database Backups
+1. (System) Scheduled job runs (e.g., daily).
+2. Creates backup snapshot of database.
+3. Stores backup in secure, off-site location.
+4. (Admin) Can later verify restore procedure from backup.
+9. External Uptime Monitoring
+1. (External Service) Pings public website at regular intervals.
+2. If ping fails/response slow, triggers alert to DevOps/Admin.
+3. Tracks uptime percentage against 99.5% target.
+10. Send Scheduled Rate Change Emails
+1. Admin changes an ad rate, effective on a future date.
+2. (System) Calculates date 30 days prior to effective date.
+3. On that date, (System) emails all advertisers on record about the upcoming change.
+________________
+
+
+COMPLIANCE, SECURITY & VALIDATION JOURNEYS
+1. Unauthorized Access Attempt
+1. User tries to directly access /admin or /pro-view URL without logging in.
+2. (System) Redirects user to login page.
+2. Access Denied for Low-Privilege User
+1. User with "Media Manager" role tries to access /admin/financial-reports.
+2. (System) Returns "403 Forbidden" or similar access-denied page.
+3. Validate WCAG 2.1 AA Compliance
+1. (QA/Auditor) Runs axe DevTools or similar on key pages.
+2. Reviews report for violations of contrast, alt text, keyboard nav, etc.
+3. Confirms compliance or logs issues for fix.
+4. Simulate View Count Spam Attack
+1. (QA/Tester) Uses script to rapidly refresh a page with an ad/article.
+2. (QA/Tester) Checks internal logs/database.
+3. Confirms view counts increased only once per valid view, resisting spam.
+5. Validate ISO 27001 Control Mapping
+1. (Auditor) Reviews system architecture, access logs, backup procedures, audit trails.
+2. Maps each observed control to the ISO 27001:2022 framework.
+3. Produces compliance report.
+6. Load Test Search Performance
+1. (QA/Dev) Populates database with 10,000+ test records (players, articles).
+2. Uses load testing tool to simulate multiple concurrent search queries.
+3. Confirms search response time remains <2 seconds under load.
+7. Perform Accessibility Audit
+1. Follows Journey C.3 (Validate WCAG Compliance).
+2. Also manually tests with screen readers and keyboard-only navigation.
+8. Data Subject Access Request (Implied)
+1. User requests a copy of their personal data.
+2. (Admin) Uses admin tools to compile data associated with user's email/ID.
+3. Provides secure download link to user.
+9. Data Purge Request/Retention
+1. User requests account/data deletion.
+2. OR, data retention period expires.
+3. (Admin/System) Anonymizes/purges user data from system in accordance with policy.

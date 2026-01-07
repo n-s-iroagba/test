@@ -1,0 +1,89 @@
+﻿UBIQUITOUS LANGUAGE DOCUMENT
+Project: Amafor Gladiators Digital Ecosystem
+Document Version: 1.0
+Date: April 11, 2024
+Author: Nnamdi Solomon Iroagba
+Purpose: To define a shared vocabulary for all stakeholders (business, development, design) to ensure consistent understanding and communication.
+CORE DOMAIN TERMS
+User & Role Definitions
+Term
+	Definition
+	Fan
+	Visitor consuming public content. No account required.
+	Scout
+	Verified professional with 'Pro View' portal access for talent evaluation.
+	Advertiser
+	Verified business that creates and pays for ad campaigns.
+	Patron
+	Fan with recurring/lifetime financial commitment via the patronage program.
+	Donor
+	Fan making a one-time donation, optionally listed on the Supporter Wall.
+	Content Manager
+	Club staff publishing articles/videos via the no-code CMS.
+	Sports Administrator
+	Club staff updating fixtures/results/lineups within 30-minute SLA.
+	Data Steward
+	Club staff (Head of Football Ops) with exclusive edit rights to player/league data.
+	Commercial Manager
+	Club staff verifying advertisers, setting ad rates, handling disputes.
+	IT/Security Lead
+	Technical role with sole access to audit logs and security controls.
+	Content & Media
+Term
+	Definition
+	Player Profile
+	Verified record with: Name, Image, DOB, Height, Position, Bio.
+	Public Highlight
+	Short video clip (YouTube/Vimeo) visible to all fans.
+	Full Match Archive
+	Complete match materials (full video, clips, gallery) available in Pro View within 30 minutes of match end.
+	Article
+	Published content with Title, Body, Author, Date, Tags, Featured Image.
+	Tag
+	Predefined category for content classification and ad targeting (Football News, Match Report, Academy Update, Player Spotlight, Club Announcement).
+	Advertising & Monetization
+Term
+	Definition
+	Ad Campaign
+	Advertiser's purchased package: Creative, Target Views, Schedule, Zone.
+	Ad Zone
+	Fixed placement location with exact specs (Homepage Banner, Top Page Banner, Sidebar, Article Footer, Mid-Article Banner).
+	Unique View
+	50% of ad visible for ≥1 second, counted once per user per 24h via persistent cookie.
+	Per-View Rate
+	Cost per Unique View, set by Commercial Manager, with 30-day advance notice for changes.
+	Ad Creative
+	Image/Video file meeting zone specs, must include "Ad by [Advertiser Name], [Company Name]".
+	Dispute
+	Formal complaint sent to complaints@amaforgaladiatorsfc.com; initial response within 2 business days.
+	Financial Support
+Term
+	Definition
+	Donation
+	One-time payment via Paystack button, with automated receipt.
+	Patronage Tier
+	Commitment level: Sponsor/Grand Patron (one at a time), Patron, Supporter, Advocate, Legend.
+	Supporter Wall
+	Public page listing donor names (opt-in), sorted alphabetically by last name (non-English names at bottom by creation date).
+	Patron Recognition
+	Display of patron name & portrait/logo on homepage and dedicated patron page (grouped by tier).
+	System & Security
+Term
+	Definition
+	Audit Log
+	Immutable record of data changes: Old Value, New Value, User ID, Timestamp. IT/Security Lead access only.
+	Cookie Consent
+	GDPR banner requiring explicit 'Accept' click before tracking; 'Reject' disables tracking but allows full site use.
+	Verification
+	Manual approval of Scout or Advertiser accounts by club staff.
+	SLA
+	Maximum allowed time: Scout approval (48h), Match result update (30m), Pro View archive availability (30m), Ad dispute response (2 business days).
+	Acronyms
+* BRD: Business Requirements Document
+* PRD: Product Requirements Document
+* CMS: Content Management System
+* GA4: Google Analytics 4
+* SLA: Service Level Agreement
+* CPV: Cost Per View
+* MVP: Minimum Viable Product
+* ISO: International Organization for Standardization

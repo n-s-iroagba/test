@@ -1,0 +1,775 @@
+﻿PRODUCT REQUIREMENTS DOCUMENT (PRD) - PATCHED VERSION
+Project: Amafor Gladiators Digital Ecosystem
+Document Version: 2.1 (Patched with UI/UX Considerations)
+Date: [Current Date]
+Author: Nnamdi Solomon Iroagba
+Status: For Development & Implementation
+________________
+
+
+1.0 PRODUCT VISION & EXECUTIVE SUMMARY
+1.1 Vision Statement
+To become the premier digital bridge connecting African football talent to global opportunities while building a sustainable, engaged community through a transparent and professional digital ecosystem.
+1.2 Executive Summary
+This document translates the Business Requirements Document (BRD Version 4.0) into actionable product specifications for developing the Amafor Gladiators Digital Ecosystem. The platform serves three core functions:
+1. Talent Export: A verified, secure portal for international scouts.
+2. Fan Engagement: A dynamic content hub for local and global supporters.
+3. Monetization Engine: Self-service advertising, donations, and patronage generating direct revenue.
+The product is designed to be scalable, secure (ISO 27001:2022 compliant), and user-centric, with a focus on mobile-first usability and a cohesive, sporty football aesthetic.
+1.3 Alignment with Business Objectives
+BRD Objective
+	PRD Translation / Success Metric
+	Maximize Fan Engagement
+	Increase Avg. Time-on-Site by 40% in 6 months via EPIC 2 & EPIC 8 features.
+	Build Monetizable Traffic
+	Achieve month-over-month growth via content, sharing, and improved discoverability (EPIC 8).
+	Establish Professional Trust
+	Secure 50 verified 'Pro View' scout registrations in Year 1 via EPIC 1.
+	Generate Advertising Revenue
+	Secure 20 active advertiser accounts in 6 months via EPIC 4.
+	Achieve Advertising Efficiency
+	Maintain 99.9% ad delivery accuracy via NFR-06 & related ACs.
+	Facilitate Financial Support
+	Track donation growth via EPIC 3 and EPIC 7.
+	________________
+
+
+2.0 SCOPE
+2.1 In-Scope for MVP (Minimum Viable Product)
+* Public Website (CMS-driven, responsive)
+* Secure 'Pro View' Scout Portal (Role-based access)
+* Dynamic Fixtures, Results & League Table Modules (Manual entry)
+* Match Lineup Management & Display
+* Integrated Video Hosting (YouTube/Vimeo) & WhatsApp Sharing
+* View Tracking Analytics for all content (internal dashboards only)
+* Self-Service Advertising Platform with Paystack payment processing
+* Donation System with Paystack integration and automated receipts
+* Patronage Program with Paystack subscriptions and recognition display
+* ISO 27001:2022 Security Controls & Audit Logging
+* Supporter Wall and Patron Recognition on Homepage
+* Global Search Functionality (Players, Articles, Matches)
+* Comprehensive UI/UX Design System with WCAG AA compliance
+* Notification System for key user actions (email)
+* Enhanced Navigation & Dashboard with quick actions
+2.2 Explicitly Out-of-Scope
+* Native iOS/Android Mobile Applications
+* Live Match Streaming/Broadcasting
+* E-commerce Merchandise Store
+* Payment processing beyond Paystack
+* Advanced BI Dashboards
+* Programmatic Ad Networks
+* Ad Creative Design Services
+* Multi-language support (beyond English)
+* SMS notifications
+* Mobile push notifications
+________________
+
+
+3.0 USER PERSONAS & JOURNEYS
+3.1 Personas
+Persona
+	Role & Goals
+	Key Frustrations
+	Relevant Epics
+	Marcus (The Scout)
+	Int'l Talent Scout. Needs verifiable data, full match access.
+	Unreliable player info, no central archive.
+	EPIC 1, EPIC 8
+	Chidi (The Fan)
+	Local/Diaspora Supporter. Wants news, highlights, league updates.
+	Outdated info, poor mobile site, hard to share.
+	EPIC 2, EPIC 3, EPIC 8
+	Fatima (The Advertiser)
+	Local Business Owner. Wants to reach fans with clear ROI.
+	Complex ad systems, opaque pricing.
+	EPIC 4, EPIC 8
+	Tunde (The Media Manager)
+	Club Staff. Needs easy publishing & analytics.
+	Technical CMS, no engagement data.
+	EPIC 2, EPIC 8
+	Ngozi (The Patron)
+	Diaspora Supporter. Wants to contribute regularly and be recognized.
+	No structured way to give ongoing support.
+	EPIC 7
+	Admin User
+	Internal staff managing multiple functions (content, ads, scouts, patrons).
+	Switching between disjointed admin screens.
+	EPIC 1, 2, 4, 5, 7, 8
+	________________
+
+
+4.0 PRODUCT REQUIREMENTS: EPICS, STORIES & SPECIFICATIONS
+EPIC 1: TALENT PROMOTION & PROFESSIONAL SCOUT PORTAL
+Objective: Establish credibility and provide exclusive tools for professional talent evaluation.
+User Story 1.1: As an international scout, I need to access detailed, verifiable player profiles with audit trails.
+* Linked BRD: BR-TP-01, BR-SEC-01
+* Acceptance Criteria (AC):
+   * AC1.1.1: Player profiles display: Name, Image, DOB, Height, Position, Bio.
+   * AC1.1.2: Only 'Data Steward' and 'Super Admin' can edit profiles.
+   * AC1.1.3: All changes log: old value, new value, user ID, timestamp.
+   * AC1.1.4: Audit trail viewable in admin panel.
+User Story 1.2: As a scout, I need exclusive access to comprehensive match materials.
+* Linked BRD: BR-TP-02, BR-SEC-02
+* Acceptance Criteria (AC):
+   * AC1.2.1: 'Pro View' registration requires: Name, Email, Social Media URL, Organization, Reason.
+   * AC1.2.2: Applications pending for manual approval; admin notified.
+   * AC1.2.3: Approved scouts access portal with full-match archives (YouTube embeds).
+   * AC1.2.4: Full archives available within 30 minutes of match end.
+User Story 1.3: As club management, I want to generate branded PDF player summaries.
+* Linked BRD: BR-TP-03
+* Acceptance Criteria (AC):
+   * AC1.3.1: Admin can generate PDF with club branding.
+   * AC1.3.2: PDF includes player data and verification timestamps.
+   * AC1.3.3: Option to include/exclude contact info.
+EPIC 2: FAN ENGAGEMENT & DYNAMIC CONTENT HUB
+Objective: Build and retain a loyal fanbase with fresh, easily accessible content and real-time competition tracking.
+User Story 2.1: As the Media Manager, I need to easily publish news and embed videos without coding.
+* Linked BRD: BR-CE-01, BR-NFR-03
+* Acceptance Criteria (AC):
+   * AC2.1.1: CMS with WYSIWYG editor and video URL embed (auto-generates).
+   * AC2.1.2: Mobile-friendly interface.
+   * AC2.1.3: Content tagging system (predefined tags).
+User Story 2.2: As a fan, I want to see league position, fixtures, and results.
+* Linked BRD: BR-CE-02, BR-CE-03, BR-NFR-02
+* Acceptance Criteria (AC):
+   * AC2.2.1: League table and fixtures/results modules.
+   * AC2.2.2: Manual update by Sports Administrator with 30-minute SLA.
+   * AC2.2.3: Fully responsive on 320px screens.
+User Story 2.3: As a fan, I want to share content on WhatsApp.
+* Linked BRD: BR-CE-04
+* Acceptance Criteria (AC):
+   * AC2.3.1: Share button with pre-filled message: "Check out this article from Amafor Gladiators!" + URL + thumbnail.
+User Story 2.4: As the Product Owner, I need to see accurate view counts.
+* Linked BRD: BR-CE-05, BR-NFR-05
+* Acceptance Criteria (AC):
+   * AC2.4.1: Internal dashboard tracks views per article/video.
+   * AC2.4.2: Counts not displayed publicly.
+User Story 2.5: As a fan, I want to see match lineups.
+* Linked BRD: BR-CE-07
+* Acceptance Criteria (AC):
+   * AC2.5.1: Sports admin can manage starting lineups per fixture.
+   * AC2.5.2: Lineups displayed on public fixture pages.
+EPIC 3: ACADEMY OPERATIONS & DONATIONS
+Objective: Present the club's professional structure and facilitate financial support.
+User Story 3.1: As a partner, I want to understand the academy's philosophy.
+* Linked BRD: BR-AO-01
+* Acceptance Criteria (AC):
+   * AC3.1.1: Public pages for Philosophy, Curriculum, Staff, Pathway.
+User Story 3.2: As a supporter, I need a trusted way to donate.
+* Linked BRD: BR-AO-02, BR-DR-03
+* Acceptance Criteria (AC):
+   * AC3.2.1: Donation page with Paystack payment button (no bank details).
+   * AC3.2.2: Automated receipt email with Amount, Date, Transaction ID, Reference.
+User Story 3.3: As a parent, I want quick WhatsApp contact.
+* Linked BRD: BR-AO-03
+* Acceptance Criteria (AC):
+   * AC3.3.1: Floating WhatsApp widget with predefined greeting.
+User Story 3.4: As a donor, I want my name recognized on a Supporter Wall.
+* Linked BRD: BR-DR-01, BR-DR-02
+* Acceptance Criteria (AC):
+   * AC3.4.1: Donation form includes opt-in checkbox.
+   * AC3.4.2: Public 'Supporter Wall' displays names alphabetically by last name.
+   * AC3.4.3: Names with non-A-Z/a-z chars sorted at bottom by creation date.
+EPIC 4: SELF-SERVICE ADVERTISING PLATFORM
+Objective: Create a scalable, transparent revenue stream.
+User Story 4.1: As a business owner, I want to create a verified advertiser account.
+* Linked BRD: BR-AD-01, BR-SEC-05
+* Acceptance Criteria (AC):
+   * AC4.1.1: Registration form with business name, email, phone.
+   * AC4.1.2: Manual verification by Commercial Manager.
+   * AC4.1.3: Data segregation between advertisers.
+User Story 4.2: As an advertiser, I want to create a campaign with specific creatives.
+* Linked BRD: BR-AD-02, BR-NFR-07, BR-SEC-06
+* Acceptance Criteria (AC):
+   * AC4.2.1: Dashboard with ad zone selection and exact specs display.
+   * AC4.2.2: Upload validation for dimensions, format, file size.
+   * AC4.2.3: Ad must include text: "Ad by [Advertiser Name], [Company Name]".
+   * AC4.2.4: Predefined zones: Homepage Banner (1200x300), Top Page Banner (970x250), Sidebar (300x250), Article Footer (728x90), Mid-Article Banner (640x360 video, 30s max, no audio).
+User Story 4.3: As an advertiser, I need to pay via Paystack with transparent pricing.
+* Linked BRD: BR-AD-03, BR-NFR-08
+* Acceptance Criteria (AC):
+   * AC4.3.1: Total cost = per-view rate × target unique views.
+   * AC4.3.2: Paystack checkout flow.
+   * AC4.3.3: Payment confirmation email.
+User Story 4.4: As the system, I must display ads and track unique views accurately.
+* Linked BRD: BR-AD-04, BR-NFR-06, BR-AD-07
+* Acceptance Criteria (AC):
+   * AC4.4.1: Ad targeting based on Home Page OR page tags (Football News, Match Report, Academy Update, Player Spotlight, Club Announcement). Multiple tags allowed (OR logic).
+   * AC4.4.2: View definition: 50% of ad visible for ≥1 second, counted once per user per 24h via persistent cookie.
+   * AC4.4.3: Dashboard updates with ≤5 minute latency.
+   * AC4.4.4: View counting via Google Analytics events; hourly sync.
+User Story 4.5: As an advertiser, I need a real-time performance dashboard.
+* Linked BRD: BR-AD-05, BR-AD-12
+* Acceptance Criteria (AC):
+   * AC4.5.1: Dashboard shows Purchased, Delivered, Remaining views, CPV.
+   * AC4.5.2: Data retained for 1 year.
+User Story 4.6: As the system, I must pause campaigns at view limit and notify.
+* Linked BRD: BR-AD-06
+* Acceptance Criteria (AC):
+   * AC4.6.1: Auto-pause at 100% delivery; email notification with upsell option.
+User Story 4.7: As an advertiser, I need a clear dispute resolution process.
+* Linked BRD: BR-AD-13
+* Acceptance Criteria (AC):
+   * AC4.7.1: Complaints sent to complaints@amaforgaladiatorsfc.com.
+   * AC4.7.2: System auto-acknowledges with case number.
+   * AC4.7.3: Commercial Manager responds substantively within 2 business days.
+User Story 4.8: As the Commercial Manager, I need to manage ad rates.
+* Linked BRD: BR-AD-11
+* Acceptance Criteria (AC):
+   * AC4.8.1: Admin sets per-view rates per zone.
+   * AC4.8.2: Rate changes trigger email to all advertisers on record 30 days prior.
+User Story 4.9: As the system, I must block ad purchases if Paystack is down.
+* Linked BRD: BR-AD-10
+* Acceptance Criteria (AC):
+   * AC4.9.1: Display maintenance message; prevent campaign creation.
+EPIC 5: SECURITY, COMPLIANCE & DATA INTEGRITY
+Objective: Ensure the platform is trustworthy and ISO 27001:2022 compliant.
+User Story 5.1: As the Data Steward, I need immutable audit logs.
+* Linked BRD: BR-SEC-01, BR-SEC-03, BR-SEC-07
+* Acceptance Criteria (AC):
+   * AC5.1.1: Logs store old/new values, user ID, timestamp.
+   * AC5.1.2: Access restricted to IT/Security Lead.
+User Story 5.2: As the system, I must enforce role-based access control.
+* Linked BRD: BR-SEC-02
+* Acceptance Criteria (AC):
+   * AC5.2.1: Public vs. Pro View content segregation.
+User Story 5.3: As a user, I want to give explicit cookie consent.
+* Linked BRD: BR-SEC-04
+* Acceptance Criteria (AC):
+   * AC5.3.1: Banner requires 'Accept' click before tracking.
+   * AC5.3.2: 'Reject' disables GA and ad tracking; site remains functional.
+EPIC 6: SYSTEM PERFORMANCE & USABILITY
+Objective: Guarantee a fast, reliable, and accessible experience.
+User Story 6.1: As a mobile user, I need a fully responsive site.
+* Linked BRD: BR-NFR-02
+* Acceptance Criteria (AC):
+   * AC6.1.1: Tested at 320px, 768px, 1024px.
+   * AC6.1.2: League table scrolls horizontally on mobile.
+User Story 6.2: As a user on 3G, I need smooth video playback.
+* Linked BRD: BR-NFR-01
+* Acceptance Criteria (AC):
+   * AC6.2.1: Embedded players use adaptive bitrate.
+   * AC6.2.2: Starts within 5 seconds on 1 Mbps connection.
+User Story 6.3: As the Product Owner, I need high availability.
+* Linked BRD: BR-NFR-04
+* Acceptance Criteria (AC):
+   * AC6.3.1: 99.5% uptime target.
+User Story 6.4: As the system, I must ensure accurate ad view counting.
+* Linked BRD: BR-NFR-06
+* Acceptance Criteria (AC):
+   * AC6.4.1: 99.9% sync accuracy between views and budgets.
+User Story 6.5: As the system, I must insert mid-article ads correctly.
+* Linked BRD: BR-NFR-09
+* Acceptance Criteria (AC):
+   * AC6.5.1: Insert ad after first 100 words.
+   * AC6.5.2: If article <100 words, show ad at end.
+EPIC 7: PATRONAGE PROGRAM
+Objective: Create predictable revenue through recurring fan support with public recognition.
+User Story 7.1: As a fan, I want to become a patron with monthly/yearly/lifetime commitment.
+* Linked BRD: BR-PP-01
+* Acceptance Criteria (AC):
+   * AC7.1.1: 'Become a Patron' page with tier explanations (Sponsor/Grand Patron, Patron, Supporter, Advocate, Legend).
+   * AC7.1.2: Paystack subscription setup for recurring/one-time payments.
+   * AC7.1.3: Confirmation email and receipt.
+User Story 7.2: As club admin, I need to manually manage patron records.
+* Linked BRD: BR-PP-02
+* Acceptance Criteria (AC):
+   * AC7.2.1: Admin panel to add/edit patrons (name, tier, position, commitment).
+   * AC7.2.2: Tier amounts configurable; changes require Sponsor approval.
+User Story 7.3: As the system, I must display patron recognition on the homepage.
+* Linked BRD: BR-PP-03
+* Acceptance Criteria (AC):
+   * AC7.3.1: Homepage section displays patron names and portraits/logos.
+   * AC7.3.2: For companies, display logo; for individuals, portrait.
+User Story 7.4: As the system, I must display a comprehensive patron page.
+* Linked BRD: BR-PP-04
+* Acceptance Criteria (AC):
+   * AC7.4.1: Dedicated page groups patrons by tier.
+   * AC7.4.2: Within tier, sorted alphabetically by last name (same rule as Supporter Wall).
+   * AC7.4.3: Non-mappable names at bottom of tier by creation date.
+EPIC 8: USER INTERFACE, NAVIGATION & ENHANCED UX
+Objective: Deliver a consistent, accessible, and intuitive user experience across all platform functions.
+User Story 8.1: As a user, I need to search for players, articles, and matches.
+* Acceptance Criteria (AC):
+   * AC8.1.1: Global search bar in site header (mobile-friendly).
+   * AC8.1.2: Search returns results for Players, Articles, and Match Reports in separate tabs.
+   * AC8.1.3: Results display key info (player position, article date, match score).
+   * AC8.1.4: "No results" state with helpful message and suggestion to broaden terms.
+User Story 8.2: As a user, I need clear feedback during system actions and errors.
+* Acceptance Criteria (AC):
+   * AC8.2.1: Loading spinners for: PDF generation, video buffering, campaign creation.
+   * AC8.2.2: Clear error messages for: payment failure, upload rejection (with reason), API timeouts.
+   * AC8.2.3: Success confirmations for: payment completed, form submission, profile update.
+User Story 8.3: As a user with disabilities, I need the site to be accessible.
+* Acceptance Criteria (AC):
+   * AC8.3.1: Comply with WCAG 2.1 Level AA standards.
+   * AC8.3.2: All images have alt text. Videos have captions where possible.
+   * AC8.3.3: Full keyboard navigability and visible focus states.
+   * AC8.3.4: Color contrast ratio of at least 4.5:1 for text.
+User Story 8.4: As a scout or admin, I want to export relevant data.
+* Acceptance Criteria (AC):
+   * AC8.4.1: In Pro View portal, option to export player list to CSV (Name, Position, Age).
+   * AC8.4.2: Admin dashboard allows export of ad performance data (Campaign, Views, Spend) to CSV.
+User Story 8.5: As a first-time user, I need guidance on key features.
+* Acceptance Criteria (AC):
+   * AC8.5.1: Tooltips on dashboard icons and complex controls (e.g., ad zone selector).
+   * AC8.5.2: "Welcome" modal for new advertisers and Pro View scouts explaining key features.
+   * AC8.5.3: A static "Help & Contact" page with FAQs and support@amaforgladiatorsfc.com.
+User Story 8.6: As a logged-in user, I want a personalized navigation experience.
+* Acceptance Criteria (AC):
+   * AC8.6.1: Role-based dashboard quick links (e.g., "Create Campaign" for advertisers, "Manage Lineups" for Sports Admin).
+   * AC8.6.2: "Recently Viewed" section in Pro View portal (last 5 players/profiles viewed).
+   * AC8.6.3: Breadcrumb navigation on all pages deeper than 2 levels.
+User Story 8.7: As a system, I must manage user sessions securely.
+* Acceptance Criteria (AC):
+   * AC8.7.1: Admin/Scout sessions expire after 30 minutes of inactivity.
+   * AC8.7.2: Clear warning modal at 25 minutes with option to extend session.
+   * AC8.7.3: Upon timeout, user is redirected to login with a message.
+User Story 8.8: As the system, I must send notifications for key user actions.
+* Acceptance Criteria (AC):
+   * AC8.8.1: Email notification when: campaign reaches 100% delivery, Pro View application is approved/rejected, new patron signs up.
+   * AC8.8.2: All notifications include clear branding and unsubscribe option.
+________________
+
+
+5.0 NON-FUNCTIONAL REQUIREMENTS (CONSOLIDATED)
+Category
+	ID
+	Requirement
+	Validation Method
+	Performance
+	NFR-01
+	Adaptive video streaming for 3G (1 Mbps).
+	Test on throttled network.
+	Usability
+	NFR-02
+	Fully responsive down to 320px mobile.
+	Chrome DevTools device testing.
+	Usability
+	NFR-03
+	CMS usable on smartphone by non-technical user.
+	User testing with Media Manager.
+	Availability
+	NFR-04
+	99.5% public website uptime.
+	External monitoring service.
+	Reliability
+	NFR-05
+	View count data persistent and spam-resistant.
+	Simulate refresh attacks; check DB logs.
+	Performance
+	NFR-06
+	99.9% ad view/budget sync accuracy.
+	Audit reconciliation logs weekly.
+	Usability
+	NFR-07
+	Clear per-view pricing displayed before purchase.
+	Visual confirmation in UI.
+	Security
+	NFR-08
+	Secure server-side Paystack integration.
+	Code review; no sensitive data in frontend.
+	Usability
+	NFR-09
+	Mid-article ad insertion after 100 words.
+	Test with varying article lengths.
+	Usability
+	NFR-10
+	Global search responds in <2 seconds for up to 10,000 records.
+	Load testing with simulated data.
+	Usability
+	NFR-11
+	Meets WCAG 2.1 AA accessibility standards.
+	Audit using tools like axe DevTools.
+	Reliability
+	NFR-12
+	Graceful error handling; no un-styled system error pages.
+	UI review and testing.
+	Performance
+	NFR-13
+	Core UI components load and are interactive within 3 seconds on 3G.
+	Lighthouse/WebPageTest audit.
+	________________
+
+
+6.0 TECHNICAL SPECIFICATIONS & CONSTRAINTS
+* Architecture: Modern Web Stack (React/Next.js frontend, Node.js/Python backend, PostgreSQL).
+* Hosting: Cloud-based (AWS/Azure/GCP) with auto-scaling.
+* Security: SSL/TLS, role-based auth, ISO 27001 control mapping.
+* Integrations:
+   * Paystack API (Payments for ads, donations, patronage)
+   * Google Analytics (GA4) Event Tracking (ad views)
+   * YouTube IFrame Player API / Vimeo Player API
+   * Email service provider (SendGrid/Resend) for notifications
+* Frontend Framework: React/Next.js with responsive component library.
+* Search Implementation: Client-side search for smaller datasets with option for API-based search for scalability.
+* Primary Language: English.
+* Ad Spec Constraint: Fixed sizes/formats per zone.
+________________
+
+
+7.0 USER INTERFACE & DESIGN REQUIREMENTS
+7.1 Brand Guidelines & Design System
+* Primary Color: Sky Blue (#87CEEB). Used for primary buttons, key highlights, links.
+* Secondary Color: Charcoal (#2F4F4F). Used for headers, footers, primary text, navigation bars.
+* Accent Colors:
+   * White (#FFFFFF) for backgrounds
+   * Green (#28a745) for success states
+   * Red (#dc3545) for errors/destructive actions
+* Typography:
+   * Headings: "Montserrat", "Arial Black", sans-serif (Sporty, bold)
+   * Body: "Open Sans", "Roboto", sans-serif (Highly readable)
+* Spacing: 8px base unit (8px, 16px, 24px, 32px, 48px, 64px).
+* Imagery: Sporty, dynamic football action shots. Player portraits should be professional and consistent.
+* Iconography: Consistent icon set (Font Awesome or similar) with clear meaning.
+7.2 Core Component Library
+* Buttons:
+   * Primary (Sky Blue background, white text)
+   * Secondary (Charcoal outline, Charcoal text)
+   * Danger (Red background, white text)
+* Cards: Consistent shadow (0 2px 8px rgba(0,0,0,0.1)), border-radius (8px) for articles, player profiles, and ad previews.
+* Data Tables: Used for league tables, admin lists. Striped rows, sortable headers.
+* Modals & Alerts: Clearly differentiated for confirmations, errors, and information.
+* Form Elements: Consistent styling for inputs, selects, validation messages.
+* Navigation: Persistent top bar with logo, main nav, search, and user menu.
+7.3 Responsive Breakpoints & Behavior
+* Mobile: < 768px. Stacked layouts, hamburger menu, touch-friendly buttons.
+* Tablet: 768px - 1023px. Hybrid layouts, side-by-side elements where appropriate.
+* Desktop: ≥ 1024px. Full multi-column layouts, persistent side navigation for admin areas.
+7.4 Page-Specific UI Requirements
+* Empty States: Illustrative graphic + helpful text for: Empty search results, no campaigns created, no articles published.
+* Dashboard Widgets: Advertiser, Scout, and Admin dashboards use a grid of summary cards with key metrics and quick-action buttons.
+* Loading States: Skeleton screens for content-heavy pages, spinners for actions.
+* Error Pages: Branded 404, 500 error pages with helpful navigation.
+________________
+
+
+8.0 SUCCESS CRITERIA & GO-LIVE CHECKLIST
+* All BRD 4.0 requirements implemented and validated.
+* UAT passed by representatives for all 6 personas.
+* Core user journeys documented and demonstrated.
+* ISO 27001 control implementation verified.
+* Performance tests confirm NFR targets.
+* Admin users trained.
+* Launch plan communicated.
+* All UI components built and documented in Storybook or equivalent.
+* Accessibility audit passed (WCAG 2.1 AA).
+* Search functionality tested with representative data.
+* Responsive design verified at 320px, 768px, 1024px, and 1440px.
+* User onboarding flows (tooltips, welcome modals) implemented and tested.
+* Error states and loading states designed and implemented for all critical paths.
+* Notification system tested end-to-end.
+________________
+
+
+9.0 APPENDICES
+Appendix A: Complete Requirement Traceability Matrix
+BRD Req ID
+	PRD Epic
+	PRD User Story
+	Priority
+	Status
+	BR-TP-01
+	EPIC 1
+	US 1.1
+	High
+	Defined
+	BR-TP-02
+	EPIC 1
+	US 1.2
+	High
+	Defined
+	BR-TP-03
+	EPIC 1
+	US 1.3
+	Medium
+	Defined
+	BR-TP-04
+	EPIC 1
+	US 1.2
+	Medium
+	Defined
+	BR-TP-05
+	EPIC 1
+	US 1.2
+	High
+	Defined
+	BR-CE-01
+	EPIC 2
+	US 2.1
+	High
+	Defined
+	BR-CE-02
+	EPIC 2
+	US 2.2
+	High
+	Defined
+	BR-CE-03
+	EPIC 2
+	US 2.2
+	High
+	Defined
+	BR-CE-04
+	EPIC 2
+	US 2.3
+	Medium
+	Defined
+	BR-CE-05
+	EPIC 2
+	US 2.4
+	High
+	Defined
+	BR-CE-06
+	EPIC 2
+	US 2.1
+	Low
+	Defined
+	BR-CE-07
+	EPIC 2
+	US 2.5
+	Medium
+	Defined
+	BR-AO-01
+	EPIC 3
+	US 3.1
+	Medium
+	Defined
+	BR-AO-02
+	EPIC 3
+	US 3.2
+	Medium
+	Defined
+	BR-AO-03
+	EPIC 3
+	US 3.3
+	Low
+	Defined
+	BR-AD-01
+	EPIC 4
+	US 4.1
+	High
+	Defined
+	BR-AD-02
+	EPIC 4
+	US 4.2
+	High
+	Defined
+	BR-AD-03
+	EPIC 4
+	US 4.3
+	High
+	Defined
+	BR-AD-04
+	EPIC 4
+	US 4.4
+	Medium
+	Defined
+	BR-AD-05
+	EPIC 4
+	US 4.5
+	Medium
+	Defined
+	BR-AD-06
+	EPIC 4
+	US 4.6
+	Medium
+	Defined
+	BR-AD-07
+	EPIC 4
+	US 4.4
+	Medium
+	Defined
+	BR-AD-08
+	EPIC 4
+	US 4.5
+	Medium
+	Defined
+	BR-AD-09
+	EPIC 4
+	US 4.6
+	Medium
+	Defined
+	BR-AD-10
+	EPIC 4
+	US 4.9
+	Medium
+	Defined
+	BR-AD-11
+	EPIC 4
+	US 4.8
+	Medium
+	Defined
+	BR-AD-12
+	EPIC 4
+	US 4.5
+	Medium
+	Defined
+	BR-AD-13
+	EPIC 4
+	US 4.7
+	Medium
+	Defined
+	BR-SEC-01
+	EPIC 5
+	US 5.1
+	High
+	Defined
+	BR-SEC-02
+	EPIC 5
+	US 5.2
+	High
+	Defined
+	BR-SEC-03
+	EPIC 5
+	US 5.1
+	High
+	Defined
+	BR-SEC-04
+	EPIC 5
+	US 5.3
+	Medium
+	Defined
+	BR-SEC-05
+	EPIC 4
+	US 4.1
+	High
+	Defined
+	BR-SEC-06
+	EPIC 4
+	US 4.2
+	High
+	Defined
+	BR-SEC-07
+	EPIC 5
+	US 5.1
+	High
+	Defined
+	BR-NFR-01
+	EPIC 6
+	US 6.2
+	High
+	Defined
+	BR-NFR-02
+	EPIC 6
+	US 6.1
+	High
+	Defined
+	BR-NFR-03
+	EPIC 2
+	US 2.1
+	Medium
+	Defined
+	BR-NFR-04
+	EPIC 6
+	US 6.3
+	High
+	Defined
+	BR-NFR-05
+	EPIC 2
+	US 2.4
+	Medium
+	Defined
+	BR-NFR-06
+	EPIC 6
+	US 6.4
+	High
+	Defined
+	BR-NFR-07
+	EPIC 4
+	US 4.2
+	Medium
+	Defined
+	BR-NFR-08
+	EPIC 4
+	US 4.3
+	High
+	Defined
+	BR-NFR-09
+	EPIC 6
+	US 6.5
+	Medium
+	Defined
+	BR-DR-01
+	EPIC 3
+	US 3.4
+	Medium
+	Defined
+	BR-DR-02
+	EPIC 3
+	US 3.4
+	Medium
+	Defined
+	BR-DR-03
+	EPIC 3
+	US 3.2
+	Medium
+	Defined
+	BR-PP-01
+	EPIC 7
+	US 7.1
+	High
+	Defined
+	BR-PP-02
+	EPIC 7
+	US 7.2
+	Medium
+	Defined
+	BR-PP-03
+	EPIC 7
+	US 7.3
+	High
+	Defined
+	BR-PP-04
+	EPIC 7
+	US 7.4
+	Medium
+	Defined
+	Appendix B: Ad Position Specifications
+Zone ID
+	Description
+	Format
+	Dimensions
+	Max File Size
+	Example
+	HP_TOP
+	Homepage Banner
+	Image (JPG, PNG)
+	1200x300px
+	2MB
+	Below navigation
+	TP_BAN
+	Top Page Banner
+	Image (JPG, PNG)
+	970x250px
+	2MB
+	Top of content pages
+	SIDEBAR
+	Sidebar
+	Image (JPG, PNG)
+	300x250px
+	1MB
+	Right sidebar
+	ART_FOOT
+	Article Footer
+	Image (JPG, PNG)
+	728x90px
+	1.5MB
+	End of article
+	MID_ART
+	Mid-Article Banner
+	Video (MP4, no audio)
+	640x360px, ≤30s
+	2MB
+	After 100 words
+	________________
+
+
+APPROVALS
+Product Owner: _________________________ Date: ______
+Signifies acceptance of the product scope and requirements as defined.
+Technical Lead: _________________________ Date: ______
+Signifies agreement that requirements are technically feasible within constraints.
+Project Sponsor: _________________________ Date: ______
+Signifies approval to proceed with development based on this PRD.
+UX/UI Lead: _________________________ Date: ______
+Signifies acceptance of UI/UX requirements and design system.

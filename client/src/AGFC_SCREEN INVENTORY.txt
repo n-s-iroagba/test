@@ -1,0 +1,555 @@
+﻿Foundation & Public-Facing Screens
+Screen Inventory Document v1.0 (Derived from AGFC User Journeys)
+________________
+
+
+Category 1: Public Website (Unauthenticated Users)
+Users: Chidi (Fan), Ngozi (Patron), Fatima (Advertiser), Marcus (Scout) - before login.
+Screen ID
+	Screen Name
+	Primary Persona
+	Access
+	Core Purpose / User Goal
+	Key User Journeys
+	Key UI Components / States
+	PUB-01
+	Homepage
+	Chidi, Ngozi
+	Public
+	Entry point: browse news, highlights, patron section, navigate.
+	C1, C8, C16
+	Main Navigation, Hero Slider, "News/Highlights" Section, "Patrons" Section, Footer, Cookie Consent Banner (State: First Visit), Global Search Bar.
+	PUB-02
+	News Article Listing
+	Chidi
+	Public
+	Browse list of published articles & videos.
+	C1
+	Filter/Sort, Article Card (Image, Title, Snippet, Date), Pagination.
+	PUB-03
+	News Article Detail
+	Chidi
+	Public
+	Read a full article & watch embedded video.
+	C1, C3
+	Article Title, Content (WYSIWYG), Embedded Video Player, Social Share Buttons (WhatsApp), Mid-Article Ad Zone (S.5), Related Articles.
+	PUB-04
+	League/Fixtures Overview
+	Chidi
+	Public
+	View league table, upcoming fixtures, past results.
+	C2
+	League Table (Component with horizontal scroll on mobile), Fixture List Filter (Upcoming/Results), Fixture Card (Teams, Date, Time, Score).
+	PUB-05
+	Fixture Detail Page
+	Chidi
+	Public
+	View details for a specific match.
+	C4
+	Match Info (Teams, Date, Venue), Lineups Section (Starting Players), Match Report Link, Pre/Post-Match Content.
+	PUB-06
+	Academy Section Hub
+	Chidi, Ngozi
+	Public
+	Understand youth academy structure.
+	C5
+	Sub-page Navigation (Philosophy, Curriculum, Staff, Pathway), Content Pages.
+	PUB-07
+	Support / Donate Landing Page
+	Ngozi
+	Public
+	Learn about donation & patronage options.
+	C6, C8
+	One-Time Donation Form, Patron Tier Comparison Table, "Become a Patron" CTA.
+	PUB-08
+	One-Time Donation Checkout
+	Ngozi
+	Public
+	Submit a single financial donation.
+	C6
+	Donation Amount Input, "Opt-in to Supporter Wall" Checkbox, "Donate with Paystack" Button.
+	PUB-09
+	Become a Patron Checkout
+	Ngozi
+	Public
+	Subscribe to a recurring patron tier.
+	C8
+	Patron Tier Selection (Sponsor/Grand Patron, Patron, Supporter, Advocate, Legend), Billing Cycle Toggle (Monthly/Yearly/Lifetime), "Subscribe" Button (Paystack).
+	PUB-10
+	Supporter Wall Page
+	Ngozi, Chidi
+	Public
+	View list of donors.
+	C11
+	Alphabetical Donor List (A-Z), "Special Characters" section sorted by date.
+	PUB-11
+	Global Search Results Page
+	Chidi
+	Public
+	View results from site-wide search.
+	C9, C13
+	Search Bar, Results Tabs (Players, Articles, Match Reports), Result Item (Key Info), State: No Results (Illustrative graphic + text).
+	PUB-12
+	Advertise Information Page
+	Fatima
+	Public
+	Learn about advertising opportunities.
+	F1
+	"Register/Apply" CTA, Overview of Ad Zones.
+	PUB-13
+	Scout/Pro View Access Page
+	Marcus
+	Public
+	Learn about Pro View and apply for access.
+	M1
+	Description, "Apply for Access" CTA.
+	PUB-14
+	Pro View Application Form
+	Marcus
+	Public
+	Submit credentials for Pro View access review.
+	M1
+	Form Fields (Name, Email, Social URL, Organization, Reason), Submit Button. State: Submission Confirmation ("pending manual review").
+	PUB-15
+	Advertiser Registration Form
+	Fatima
+	Public
+	Register business for advertiser account.
+	F1
+	Form Fields (Business Name, Email, Phone), Submit Button. State: Submission Confirmation ("Pending Verification").
+	PUB-16
+	Help & Contact Page
+	All
+	Public
+	Find support information.
+	A23
+	FAQs, Support Email (support@...), Contact Form (if any).
+	PUB-17
+	Login Page
+	All (Auth)
+	Public
+	Authenticate to access secure portals.
+	M1, F1, T1, AD1
+	Email/Password Fields, "Forgot Password?" Link, Login Button.
+	PUB-18
+	Password Reset Request Page
+	All (Auth)
+	Public
+	Initiate password reset.
+	A24
+	Email Input Field, "Send Reset Link" Button.
+	PUB-19
+	Password Reset Form
+	All (Auth)
+	Public
+	Set new password after receiving reset link.
+	A24
+	New Password & Confirm Fields, "Reset Password" Button.
+	Component State: C-01
+	Cookie Consent Banner
+	All
+	Public
+	Control privacy settings for tracking.
+	C10
+	Message, "Accept" Button, "Reject" Button.
+	Component State: C-02
+	Floating WhatsApp Widget
+	Chidi, Ngozi
+	Public
+	Quickly initiate contact with the club.
+	C7
+	Floating button/icon. On Click: Opens WhatsApp with pre-filled greeting.
+	
+
+PV-01
+	Pro View Dashboard
+	Marcus
+	Auth (Scout)
+	Portal landing page after login.
+	M2, M3, M6
+	Welcome message, Quick Links (Player Search, Match Archives), "Recently Viewed Players" list.
+	PV-02
+	Player Search / Directory
+	Marcus
+	Auth (Scout)
+	Find and filter players.
+	M2, M4
+	Search Bar, Filters (Position, Age, etc.), List of Player Cards (Name, Image, Position, Age), "Export to CSV" Button.
+	PV-03
+	Player Profile Detail
+	Marcus
+	Auth (Scout)
+	View comprehensive, verified player data.
+	M2
+	Player Header (Image, Name, DOB, Height, Position, Bio), Data Sections, "View Change History/Audit Trail" Link, State: Editable fields disabled for scout.
+	PV-04
+	Audit Trail / Change History
+	Marcus
+	Auth (Scout)
+	Inspect edit history for a player profile.
+	M2
+	Immutable log list: Timestamp, User (ID), Field Changed, Old Value, New Value. Back button.
+	PV-05
+	Match Archives Library
+	Marcus
+	Auth (Scout)
+	Browse and select full-match videos.
+	M3, M5
+	List/Grid of Fixtures (Teams, Date), Status Indicator ("Processing" / "Available"). State: Archive unavailable (<30 min post-match).
+	PV-06
+	Match Video Player
+	Marcus
+	Auth (Scout)
+	Watch a full match.
+	M3
+	Embedded Video Player (YouTube/Vimeo), Adaptive Bitrate Streaming. State: Video Loading/Buffering.
+	Component State: PV-C01
+	Loading Spinner / Skeleton
+	Marcus
+	Auth (Scout)
+	Feedback during data fetch or export.
+	M4, C14
+	Spinner or skeleton screen over relevant content area.
+	Component State: PV-C02
+	CSV Export Success
+	Marcus
+	Auth (Scout)
+	Confirm data download.
+	M4
+	System download prompt. (Implied screenless state).
+	________________
+
+
+Category 3: Advertiser Dashboard (Authenticated Business)
+User: Fatima
+Screen ID
+	Screen Name
+	Primary Persona
+	Access
+	Core Purpose / User Goal
+	Key User Journeys
+	Key UI Components / States
+	ADV-01
+	Advertiser Dashboard Home
+	Fatima
+	Auth (Advertiser)
+	Overview of campaign performance.
+	F3, F9
+	Welcome, Summary Widgets (Active Campaigns, Total Spend), "Create New Campaign" CTA, Recent Campaigns List. State: Empty dashboard (no campaigns).
+	ADV-02
+	Campaign List View
+	Fatima
+	Auth (Advertiser)
+	Manage all campaigns.
+	F3, F4, F8
+	Table/List of campaigns (Name, Status, Views Delivered, etc.), "Create New" button, Filter/Sort options.
+	ADV-03
+	Create Campaign Form
+	Fatima
+	Auth (Advertiser)
+	Set up a new ad campaign.
+	F2, F7, F10
+	Step 1: Ad Zone Selection (with specs/price). Step 2: Creative Upload (with validation). Step 3: Targeting (Home Page or Tags). Step 4: Set Target Unique Views & Cost Calculation. Step 5: Paystack Checkout Redirect. State: Upload Error (wrong format/size). State: Payment System Unavailable.
+	ADV-04
+	Campaign Detail / Performance
+	Fatima
+	Auth (Advertiser)
+	Monitor a specific campaign's metrics.
+	F3, F4
+	Campaign Info (Creative, Target), Real-time Metrics (Purchased, Delivered, Remaining, CPV), Status Badge (Active, Paused, Completed), "Export Data" button.
+	ADV-05
+	Historical Reports
+	Fatima
+	Auth (Advertiser)
+	Analyze past campaign data.
+	F8
+	Date Range Filters, Table of historical campaigns (Campaign, Views, Spend), "Export to CSV" Button.
+	Component State: ADV-C01
+	System Maintenance Message
+	Fatima
+	Auth (Advertiser)
+	Inform user of payment outage.
+	F7
+	Modal or inline banner message preventing checkout.
+	________________
+
+
+Category 4: Media Manager CMS (Authenticated Staff)
+User: Tunde
+Screen ID
+	Screen Name
+	Primary Persona
+	Access
+	Core Purpose / User Goal
+	Key User Journeys
+	Key UI Components / States
+	CMS-01
+	CMS Dashboard
+	Tunde
+	Auth (Media Manager)
+	Overview of content tasks.
+	T1, T2
+	"Create New Article" CTA, List of Recent Articles/Drafts, Quick Stats (View Counts).
+	CMS-02
+	Article Editor (Create/Edit)
+	Tunde
+	Auth (Media Manager)
+	Compose and format content.
+	T1, T3, T4, T5
+	WYSIWYG Editor (mobile-friendly), Title Field, Tag Selector (predefined list), Video Embed Field (URL), Publish Schedule DateTime Picker, Action Buttons ("Save Draft", "Schedule", "Publish").
+	CMS-03
+	Content List (Articles)
+	Tunde
+	Auth (Media Manager)
+	Manage all articles.
+	T2, T4
+	Table/List of articles (Title, Status, Publish Date, View Count), Filter by Status (Draft, Published, Scheduled), Edit/Delete actions.
+	CMS-04
+	Content Performance View
+	Tunde
+	Auth (Media Manager)
+	Analyze article/view popularity.
+	T2
+	List of articles ranked/sortable by internal view count metrics.
+	
+
+
+
+Category 5: Administrative Backoffice (Authenticated Admin)
+Users: Data Steward, Sports Admin, Commercial Manager, Super Admin, IT/Security Lead, Finance Admin.
+Screen ID
+	Screen Name
+	Primary Persona
+	Access
+	Core Purpose / User Goal
+	Key User Journeys
+	Key UI Components / States
+	ADM-01
+	Admin Dashboard (Role-Based)
+	Composite Admin
+	Admin (RBAC)
+	Personalized landing page with relevant tasks.
+	A12, A22
+	Role-specific Widgets (e.g., "Update Lineup", "Pending Applications"), Quick-Action Buttons, System Health Status, Tooltips on hover for complex controls.
+	ADM-02
+	User Management
+	Super Admin
+	Admin (Super)
+	View, manage, and assign roles to all system users.
+	A1, A24
+	List of Users (Email, Role, Status), "Edit User" / "Assign Role" action, "Reset Password" action for locked accounts.
+	ADM-03
+	Pro View Applications Queue
+	Commercial Manager/Super Admin
+	Admin (Approver)
+	Review and approve/reject scout applications.
+	A2
+	Table of Applications (Name, Org, Reason, Submitted Date), "Approve"/"Reject" buttons per row, Scout Detail Preview.
+	ADM-04
+	Player Profile Management (Admin)
+	Data Steward, Sports Admin
+	Admin (Data)
+	Create, view, and edit verified player profiles.
+	A3, A17, A18
+	Similar to PV-03 but with editable fields, "Generate PDF Summary" button, "View Change History" button.
+	ADM-05
+	Player PDF Generator
+	Data Steward, Sports Admin
+	Admin (Data)
+	Configure and generate a branded player summary.
+	A3
+	Form with options (Include Contact Info?, Branding Template), "Generate" button. State: Loading spinner during generation.
+	ADM-06
+	Fixtures & Results Manager
+	Sports Admin
+	Admin (Sports)
+	Input and update match data (scores, times).
+	A4, A6, A20
+	Editable League Table, List of Fixtures with editable fields (Score, Time), "Save" button. Must reflect updates within 30 mins.
+	ADM-07
+	Match Lineup Manager
+	Sports Admin
+	Admin (Sports)
+	Set starting players for a fixture.
+	A5
+	For a selected fixture: Squad List (Selectable), "Starting XI" area, Drag-and-drop or checkbox interface, Save button.
+	ADM-08
+	Advertiser Applications Queue
+	Commercial Manager
+	Admin (Commercial)
+	Verify business advertiser accounts.
+	A7
+	Table of pending advertisers (Business Name, Contact), "Verify"/"Reject" actions.
+	ADM-09
+	Advertising Rates Configuration
+	Commercial Manager
+	Admin (Commercial)
+	Set and update pricing for ad zones.
+	A8
+	Form/Table listing zones (HP_TOP, SIDEBAR, MID_ARTICLE) with editable "Per-View Rate" and "Future Effective Date" fields.
+	ADM-10
+	Patron Management
+	Commercial Manager/Admin
+	Admin (Commercial)
+	Manually add/edit patron records for recognition.
+	A11
+	List of Patrons, "Add New Patron" form (Name, Tier, Portrait/Logo Upload, Commitment), Edit functionality.
+	ADM-11
+	Audit Log Viewer
+	IT/Security Lead
+	Admin (Security)
+	Investigate immutable records of all data changes.
+	A9, A10, A18
+	Advanced Filters (User, Date Range, Table), Table of Logs (Timestamp, User ID, Table, Record ID, Old Value, New Value).
+	ADM-12
+	Advertising Performance Reports (Admin)
+	Commercial Manager, Finance Admin
+	Admin (Commercial/Finance)
+	View and export all campaign data.
+	A19, A25
+	Date Filters, Master Campaign Table (Advertiser, Campaign, Views, Spend, Status), "Export to CSV" button, Reconciliation notes.
+	ADM-13
+	Financial Transactions Report
+	Finance Admin
+	Admin (Finance)
+	Reconcile internal records with Paystack.
+	A25
+	Transaction list (Type: Donation/Ad/Patronage, Amount, Date, User, Internal ID, Paystack Ref), Export function.
+	ADM-14
+	System Notifications Inbox
+	Composite Admin
+	Admin (Various)
+	View system-generated alerts.
+	A14
+	List of notifications (New Pro View App, New Patron, New Complaint), Mark as Read, Links to relevant management screens.
+	ADM-15
+	Complaint Management Interface
+	Commercial Manager
+	Admin (Commercial)
+	Review and respond to advertiser complaints.
+	A15
+	List of complaints (Case #, Advertiser, Date, Status), Detail view with campaign data, "Respond" functionality with SLA timer.
+	ADM-16
+	Ad Delivery Reconciliation Tool
+	IT/Commercial
+	Admin (Security/Commercial)
+	Audit ad delivery accuracy.
+	A16
+	Report comparing system counts vs. GA4 event counts per campaign/time period, Discrepancy flagging.
+	ADM-17
+	System Health Dashboard
+	IT/Super Admin
+	Admin (Super/IT)
+	Monitor status of all integrations.
+	A27
+	Status Cards for each service (Paystack, GA4, Email Service, Database) with indicators (Up, Down, Error), Last checked timestamp.
+	ADM-18
+	Session Timeout Warning Modal
+	Composite Admin
+	Admin (All)
+	Warn user of impending logout due to inactivity.
+	A13
+	Modal overlay: "Your session will expire in X minutes. Click to extend." with "Stay Logged In" button.
+	Component State: ADM-C01
+	Breadcrumb Navigation
+	Composite Admin
+	Admin (All)
+	Navigate deep admin hierarchies easily.
+	A21
+	Trail shown below header (e.g., "Admin > User Management > Edit: John Doe"), Clickable links.
+	Component State: ADM-C02
+	Access Denied (403) Page
+	All
+	Admin/Public
+	Inform user they lack permissions for a resource.
+	C.2 (Compliance)
+	Clear "Access Denied" message, link to login or homepage.
+	________________
+
+
+Category 6: System Interfaces & Background Processes
+These represent configured automations, system states, and implied screens for compliance/QA.
+Screen ID / Process ID
+	Name
+	Primary Actor
+	Type
+	Core Purpose / System Goal
+	Key User Journeys
+	Key Components / Notes
+	SYS-01
+	Automated Email Service
+	System
+	Background
+	Send transactional emails.
+	M1, C6, F4, F6, A2, A14, S.1, S.2, S.10
+	Templates for: Application Approval, Donation Receipt, Campaign Complete, Rate Change Notice, Complaint Auto-Ack.
+	SYS-02
+	Paystack Webhook Handler
+	System
+	Background
+	Process payment events.
+	A26
+	Listens for events (success, failure), updates internal statuses (Patron, Campaign), triggers notifications.
+	SYS-03
+	GA4 Sync & View Counting Engine
+	System
+	Background
+	Synchronize ad views and count unique views.
+	S.3, S.6, C.4
+	Hourly cron job, logic for 50% visibility ≥1 sec, 24h cookie check, updates delivered_views.
+	SYS-04
+	Audit Trail Logging Service
+	System
+	Background
+	Immutably record data changes.
+	S.4, A17
+	Database trigger or application hook that writes to audit_log table on any UPDATE to audited tables.
+	SYS-05
+	Mid-Article Ad Injection Engine
+	System
+	Background
+	Dynamically insert ad zones into content.
+	S.5
+	Content parser, word counter, logic to insert ad HTML after ~100 words or at end.
+	SYS-06
+	Automated Database Backup Job
+	System
+	Background
+	Create secure, off-site backups.
+	S.8
+	Scheduled task, backup file generation, secure transfer to remote storage.
+	QA-01
+	WCAG 2.1 AA Compliance Audit Report
+	QA/Auditor
+	Testing
+	Validate accessibility standards.
+	C.3, C.7
+	Output from tools like axe DevTools, listing violations (contrast, alt text, ARIA).
+	QA-02
+	Load Testing Performance Report
+	QA/Dev
+	Testing
+	Verify search performance under load.
+	C.15, C.6
+	Report showing response times & system stability with 10k+ records and concurrent users.
+	QA-03
+	Security Audit & ISO 27001 Report
+	Auditor
+	Compliance
+	Map system controls to compliance framework.
+	C.5
+	Document mapping architecture, logs, backups to ISO 27001:2022 controls.
+	Implied Screen: IS-01
+	Data Subject Access Request Fulfillment Tool
+	Admin
+	Admin (Compliance)
+	Compile user data for privacy requests.
+	C.8
+	(Implied by journey) Admin interface to search for user by email/ID and export their personal data.
+	Implied Screen: IS-02
+	Data Purge/Anonymization Tool
+	Admin/System
+	Admin/Compliance
+	Execute data deletion per policy.
+	C.9
+	(Implied by journey) Interface to select user/records and perform secure anonymization/purge.
